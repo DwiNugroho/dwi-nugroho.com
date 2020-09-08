@@ -53,6 +53,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  /* text-decoration: none; */
+  color: #333;
 }
 a:active,
 a:hover {
