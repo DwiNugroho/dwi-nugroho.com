@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-// import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -10,7 +9,7 @@ interface DataProps {
   title: string
 }
 
-const SEO: FC<DataProps> = ({ description, lang, meta, title }) => {
+const SEO: FC<DataProps> = ({ description, lang = "en", meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
