@@ -8,14 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
-      },
-    },
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,7 +41,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-eslint",
       options: {
-        test: /\.tsx$|\.js$|\.jsx$/,
+        test: /\.tsx$|\.ts$|\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
         stages: ["develop"],
         options: {
