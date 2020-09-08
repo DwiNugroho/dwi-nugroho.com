@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Dwi Nugroho`,
@@ -7,8 +9,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass-resources`,
+      options: {
+        resources: [path.resolve(`./src/styles/main.scss`)],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
