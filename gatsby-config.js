@@ -1,3 +1,5 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
     title: `Dwi Nugroho`,
@@ -7,13 +9,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: `gatsby-plugin-sass-resources`,
       options: {
-        isTSX: true, // defaults to false
-        jsxPragma: `jsx`, // defaults to "React"
-        allExtensions: true, // defaults to false
+        resources: [path.resolve(`./src/styles/main.scss`)],
       },
     },
     {
@@ -48,7 +49,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-eslint",
       options: {
-        test: /\.tsx$|\.js$|\.jsx$/,
+        test: /\.tsx$|\.ts$|\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
         stages: ["develop"],
         options: {
