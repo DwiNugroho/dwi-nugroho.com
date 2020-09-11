@@ -1,0 +1,19 @@
+.footer {
+  background: $black;
+  padding: 60px 0px 100px 0px;
+  footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap !important;
+  }
+  &__menu {
+    color: $light;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 16px;
+    &:hover {
+      color: $blue;
+    }
+  }
+}

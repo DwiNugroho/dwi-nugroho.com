@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
-import Menu from '@/api/menu';
+import { navbar } from '@/api/menu';
 import Github from '@/assets/icons/github.svg';
 import LinkedIn from '@/assets/icons/linkedin.svg';
 
@@ -24,7 +24,7 @@ const Navbar = () => {
         <Link to="/" className="navbar__title">
           <h3 className="m-0">{data.site.siteMetadata.title}</h3>
         </Link>
-        {Menu.map((item, index) => (
+        {navbar.map((item, index) => (
           <Link key={index} to={item.path} className="navbar__menu">
             <p className="m-0">{item.name}</p>
           </Link>

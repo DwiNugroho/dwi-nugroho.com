@@ -26,7 +26,7 @@ module.exports = {
           '@': path.resolve(__dirname, 'src'),
           '@components': path.resolve(__dirname, 'src/components'),
         },
-        extensions: ['js', 'tsx', 'svg'],
+        extensions: ['js', 'tsx', 'ts'],
       },
     },
     {
