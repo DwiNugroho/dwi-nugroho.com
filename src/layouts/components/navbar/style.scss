@@ -1,0 +1,46 @@
+.navbar {
+  margin-top: 0;
+  height: 124px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin-right: 24px;
+    color: $gray;
+    text-decoration: none;
+    text-transform: uppercase;
+    h3 {
+      font-size: 20px;
+      letter-spacing: 2px !important;
+      color: $light;
+    }
+  }
+  &__menu {
+    font-size: 16px;
+    margin-right: 16px;
+    color: $gray;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 8px 0;
+    &:hover,
+    &[aria-current='page'] {
+      border-bottom: 1px solid $gray;
+    }
+  }
+  &__icons {
+    a {
+      color: $light;
+      margin-left: 16px;
+      &:hover {
+        color: $blue;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}

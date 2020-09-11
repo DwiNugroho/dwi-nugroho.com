@@ -1,23 +1,13 @@
 import React from 'react';
-// import { useStaticQuery, graphql } from "gatsby"
+import Navbar from '../components/navbar';
 
-const Layout: React.FC = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
-  return (
+const Layout: React.FC = ({ children }) => (
+  <>
+    <Navbar />
     <section className="container">
       <main>{children}</main>
-      <footer>{`© ${new Date().getFullYear()}, Built with`}</footer>
     </section>
-  );
-};
+  </>
+);
 
 export default Layout;
