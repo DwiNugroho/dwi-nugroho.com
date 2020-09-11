@@ -4,10 +4,10 @@ type navbarType = {
 }[];
 
 export const navbar: navbarType = [
-  {
-    name: 'Home',
-    path: '/',
-  },
+  // {
+  //   name: 'Home',
+  //   path: '/',
+  // },
   {
     name: 'Articles',
     path: '/articles',
@@ -16,10 +16,10 @@ export const navbar: navbarType = [
   //   name: 'Tags',
   //   path: '/tags',
   // },
-  {
-    name: 'About',
-    path: '/about',
-  },
+  // {
+  //   name: 'About',
+  //   path: '/about',
+  // },
 ];
 
 type footerType = {

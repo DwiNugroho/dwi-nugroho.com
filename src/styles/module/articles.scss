@@ -1,4 +1,4 @@
-.article-list {
+.home-articles {
   display: flex;
   flex-wrap: wrap;
   margin: -16px 0 0 -36px;
@@ -6,6 +6,18 @@
     &:nth-child(1) {
       flex: 1 1 100%;
     }
+    flex: 1 1 284px;
+    // background: blue;
+    margin: 40px 0 0 36px;
+    text-decoration: none;
+  }
+}
+
+.list-articles {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -16px 0 0 -36px;
+  &__item {
     flex: 1 1 284px;
     // background: blue;
     margin: 40px 0 0 36px;

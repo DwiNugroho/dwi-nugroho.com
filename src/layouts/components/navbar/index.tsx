@@ -22,11 +22,11 @@ const Navbar = () => {
     <nav className="container navbar">
       <section className="navbar__content">
         <Link to="/" className="navbar__title">
-          <h3 className="m-0">{data.site.siteMetadata.title}</h3>
+          <h3>{data.site.siteMetadata.title}</h3>
         </Link>
         {navbar.map((item, index) => (
           <Link key={index} to={item.path} className="navbar__menu">
-            <p className="m-0">{item.name}</p>
+            <p>{item.name}</p>
           </Link>
         ))}
       </section>
