@@ -1,15 +1,5 @@
 const path = require("path")
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src"),
-      },
-    },
-  })
-}
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({

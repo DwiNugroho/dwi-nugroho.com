@@ -12,6 +12,16 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@": path.resolve(__dirname, "src"),
+          "@components": path.resolve(__dirname, "src/components"),
+        },
+        extensions: ["js", "tsx"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
         resources: [path.resolve(`./src/styles/main.scss`)],

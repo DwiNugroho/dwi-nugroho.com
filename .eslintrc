@@ -45,9 +45,16 @@
   },
   "settings": {
     "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      "alias": {
+        "map": [
+          ["@components", "./src/components"],
+          ["@", "./src"]
+        ],
+        "extensions": [".ts", ".js", ".jsx", ".json", ".tsx"]
       }
+      // "node": {
+      //   "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      // }
     }
   },
   "overrides": [

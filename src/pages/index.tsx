@@ -1,8 +1,7 @@
-import React from "react"
-// import { Link } from "gatsby"
+import React from 'react';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from '@/components/seo';
+import Layout from '@/layouts/default';
 
 const IndexPage = () => (
   <Layout>
@@ -10,8 +9,7 @@ const IndexPage = () => (
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    {/* <Link to="/using-typescript/">Go to &quot;Using TypeScript&quot;</Link> */}
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
