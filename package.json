@@ -17,6 +17,7 @@
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sass-resources": "^2.0.0",
     "gatsby-plugin-sharp": "^2.6.28",
+    "gatsby-plugin-typography": "^2.5.10",
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-transformer-remark": "^2.8.32",
     "gatsby-transformer-sharp": "^2.5.13",
@@ -24,7 +25,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.2.0",

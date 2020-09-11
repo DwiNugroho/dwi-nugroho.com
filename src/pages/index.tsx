@@ -32,11 +32,11 @@ const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
     <section className="container">
       <h1>Popular Articles</h1>
       <hr />
-      <section className="article-list">
+      <section className="home-articles">
         {data.allMarkdownRemark.edges.map((item, index) => (
           <Link
             key={index}
-            className="article-list__item"
+            className="home-articles__item"
             to={item.node.frontmatter.path}
           >
             <Card

@@ -176,11 +176,7 @@ xclip -selection clipboard -i /tmp/image.png -t image/png
 
 I added the last line to copy the result into my clipboard so I can easily paste it anywhere and don't have to delete the screenshot when I no longer need it. Here's the result.
 
-![rounded](https://res.cloudinary.com/irrellia/image/upload/v1597111206/imagemagick/demo_v7n6wd.png)
-
 It's not obvious because my website background is white. But you can still see the shadow. Here's another variation.
-
-![square](https://res.cloudinary.com/irrellia/image/upload/v1597111205/imagemagick/demo2_escdkn.png)
 
 This one is more obvious because there's a small white border there.
 
