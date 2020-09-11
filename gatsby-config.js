@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -11,6 +11,24 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@': path.resolve(__dirname, 'src'),
+          '@components': path.resolve(__dirname, 'src/components'),
+        },
+        extensions: ['js', 'tsx', 'svg'],
+      },
+    },
     {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
@@ -47,11 +65,11 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-eslint",
+      resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.tsx$|\.ts$|\.js$|\.jsx$/,
         exclude: /(node_modules|.cache|public)/,
-        stages: ["develop"],
+        stages: ['develop'],
         options: {
           emitWarning: true,
           failOnError: false,
@@ -62,4 +80,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

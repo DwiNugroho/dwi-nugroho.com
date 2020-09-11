@@ -1,22 +1,22 @@
-import React, { FC } from "react"
-import { graphql, PageProps } from "gatsby"
+import React, { FC } from 'react';
+import { graphql, PageProps } from 'gatsby';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '@/components/layout';
+import SEO from '@/components/seo';
 
 interface DataProps {
   markdownRemark: {
-    html: string
+    html: string;
     frontmatter: {
-      title: string
-      author?: string
-      date?: string
-    }
-  }
+      title: string;
+      author?: string;
+      date?: string;
+    };
+  };
 }
 
 const Post: FC<PageProps<DataProps>> = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
@@ -28,8 +28,8 @@ const Post: FC<PageProps<DataProps>> = ({ data }) => {
       {/* eslint-disable-next-line */}
       <section dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($path: String!) {
@@ -43,6 +43,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Post
+export default Post;
