@@ -1,7 +1,7 @@
-const path = require("path")
+const path = require('path');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html") {
+  if (stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
         rules: [
@@ -11,13 +11,13 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
         ],
       },
-    })
+    });
   }
-}
+};
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-  const postTemplate = path.resolve("./src/templates/post.tsx")
+  const { createPage } = actions;
+  const postTemplate = path.resolve('./src/templates/post.tsx');
 
   return graphql(`
     {
@@ -26,10 +26,10 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             id
             frontmatter {
-              author
               date
               path
               title
+              description
               tags
             }
           }
@@ -39,17 +39,17 @@ exports.createPages = ({ actions, graphql }) => {
   `)
     .then(res => {
       if (res.errors) {
-        Promise.reject(res.errors)
+        Promise.reject(res.errors);
       }
 
       res.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.frontmatter.path,
           component: postTemplate,
-        })
-      })
+        });
+      });
     })
     .catch(err => {
-      Promise.reject(err)
-    })
-}
+      Promise.reject(err);
+    });
+};

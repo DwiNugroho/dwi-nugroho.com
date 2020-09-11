@@ -1,0 +1,14 @@
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -16px 0 0 -36px;
+  &__item {
+    &:nth-child(1) {
+      flex: 1 1 100%;
+    }
+    flex: 1 1 284px;
+    // background: blue;
+    margin: 40px 0 0 36px;
+    text-decoration: none;
+  }
+}

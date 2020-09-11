@@ -1,7 +1,7 @@
 ---
-path: '/first-post'
-date: '2020-09-06'
-title: 'My First Gatsby Post'
+path: '/third-post'
+date: '2020-09-11'
+title: 'My Third Gatsby Post'
 description: 'Lets make our screenshot prettier by using a software called Imagemagick. In this post, we will add some fancy effects like backdrop, shadow, border, and rounded corner with a simple script.'
 tags:
   - javascript
@@ -9,7 +9,7 @@ tags:
 
 ## Introduction
 
-[[snippet]]
+[snippet]
 | Let's make our screenshot prettier by using a software called [Imagemagick](https://imagemagick.org). In this post, we will add some fancy effects like backdrop, shadow, border, and rounded corner with a simple script.
 
 ## Prerequisite

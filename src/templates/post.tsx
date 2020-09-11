@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { graphql, PageProps } from 'gatsby';
 
-import Layout from '@/components/layout';
+import Layout from '@/layouts/default';
 import SEO from '@/components/seo';
 
 interface DataProps {
@@ -20,13 +20,13 @@ const Post: FC<PageProps<DataProps>> = ({ data }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <h1>{post.frontmatter.title}</h1>
-      <h4>
-        {`Posted by : ${post.frontmatter.author} on ${post.frontmatter.date}`}
-      </h4>
-      <br />
-      {/* eslint-disable-next-line */}
-      <section dangerouslySetInnerHTML={{ __html: post.html }} />
+      <section className="post-container">
+        <h1>{post.frontmatter.title}</h1>
+        <h4>{`Posted on ${post.frontmatter.date}`}</h4>
+        <br />
+        {/* eslint-disable-next-line */}
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+      </section>
     </Layout>
   );
 };
@@ -37,9 +37,8 @@ export const query = graphql`
       html
       id
       frontmatter {
-        date
+        date(formatString: "dddd, DD MMMM YYYY")
         title
-        author
       }
     }
   }
