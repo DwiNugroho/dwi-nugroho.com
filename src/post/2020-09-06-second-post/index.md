@@ -1,8 +1,9 @@
 ---
-path: "/second-post"
-date: "2020-09-06"
-title: "My Second Gatsby Post"
-author: "Dwi Nugroho"
+category: 'getting started'
+path: '/second-post'
+date: '2020-09-06'
+title: 'My Second Gatsby Post'
+description: 'Hi! This time I will explain about how I setup my spotifyd + spotify-tui to enjoy music from spotify without their resource heavy app. Its not Spotify fault, its Electron. Not that I hate it, I think its awesome. It just feels heavy on my machine. I still have 4GB of RAMs lol, so thats reasonable.'
 ---
 
 ## Introduction

@@ -1,0 +1,20 @@
+.tag {
+  border-radius: 2px;
+  margin: 0px 8px 8px 0px;
+  font-size: 12px;
+  line-height: 8px;
+  padding: 2px 8px 4px 8px;
+  font-weight: 600;
+  &--gray {
+    border: 1px solid $gray;
+    color: $gray;
+  }
+  &--blue {
+    border: 1px solid $blue;
+    color: $blue;
+  }
+  &--gold {
+    border: 1px solid $gold;
+    color: $gold;
+  }
+}

@@ -6,7 +6,7 @@ import Footer from '../components/footer';
 const Layout: React.FC = ({ children }) => (
   <>
     <Navbar />
-    <section className="container" style={{ minHeight: '65vh' }}>
+    <section style={{ minHeight: '65vh', marginBottom: '100px' }}>
       <main>{children}</main>
     </section>
     <Footer />

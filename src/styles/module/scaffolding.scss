@@ -4,10 +4,19 @@
   box-sizing: border-box;
 }
 
-// a {
-//   color: white;
-//   text-decoration: none;
-// }
+a {
+  color: white;
+  // text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $darkgray;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
 
 html,
 body {
