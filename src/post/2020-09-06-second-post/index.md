@@ -1,5 +1,4 @@
 ---
-category: 'getting started'
 path: '/second-post'
 date: '2020-09-06'
 title: 'My Second Gatsby Post'

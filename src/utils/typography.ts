@@ -8,8 +8,7 @@ const data = {
   // See below for the full list of options.
 };
 
-// eslint-disable-next-line
-const typography = new (Typography as any)(data);
+const typography = new Typography(data);
 
 // Output CSS as string.
 typography.toString();

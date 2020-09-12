@@ -1,0 +1,223 @@
+// :root {
+//   --code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+//   --code-font-color: #b3b9c5;
+//   --code-background-color: #353535;
+//   --string: #92d192;
+//   --variable: #f2777a;
+//   --property: #abb2bf;
+//   --number: #fca369;
+//   --operator: #ac8d58;
+//   --punctuation: #d5d8df;
+//   --comment: #848991;
+//   --function: #62cfcf;
+//   --keyword: #ffeead;
+//   --attribute: #ffd479;
+//   --class: #e1a6f2;
+//   --tag: #6ab0f3;
+//   --error: #f2777a;
+//   --font-color: #495057;
+//   --heading-color: #343a40;
+//   --background: white;
+//   --dark-font-color: #1b1d25;
+//   --medium-font-color: #60656c;
+//   --light-font-color: #787f87;
+//   --light-background: #f6f8fb;
+//   --lighter-background: #e6e8eb;
+//   --border: #d6d9de;
+//   --link-color: #5c7cfa;
+//   --link-color-darker: #3b5bdb;
+//   --navbar-color: #4c6ef5;
+//   --blockquote: #edf2ff;
+//   --transparent-text: rgba(0, 0, 0, 0.7);
+//   --transparent-bg: rgba(0, 0, 0, 0.15);
+// }
+
+$code-font-color: $light;
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-background-color: #353535;
+$color-comment: #848991;
+$punctuation: #d5d8df;
+$property: #abb2bf;
+$tag: #6ab0f3;
+$number: #fca369;
+$attribute: #ffd479;
+$string: #92d192;
+$operator: #ac8d58;
+$keyword: #ffeead;
+$function: #62cfcf;
+$class: #e1a6f2;
+$variable: #f2777a;
+
+code[class*='language-'],
+pre[class*='language-'] {
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: $code-font-color;
+  font-family: $code-font-family;
+
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  font-weight: 100;
+  line-height: 1.7;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1.5rem;
+  overflow: auto;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.06),
+    0 2px 2px rgba(0, 0, 0, 0.06), 0 4px 4px rgba(0, 0, 0, 0.06),
+    0 8px 8px rgba(0, 0, 0, 0.06), 0 16px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 0.35rem;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background-color: $code-background-color;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.35rem;
+}
+
+pre.language-text,
+code.language-text {
+  color: $gold;
+}
+
+code.language-shell::before {
+  content: '$ ';
+  color: $color-comment;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.important {
+  color: $color-comment;
+}
+
+.token.punctuation {
+  color: $punctuation;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property {
+  color: $property;
+}
+
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $tag;
+}
+
+.token.number {
+  color: $number;
+}
+
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+  color: $code-font-color;
+}
+
+.token.attr-name,
+.token.selector {
+  color: $attribute;
+}
+
+.token.attr-value,
+.token.string {
+  color: $string;
+}
+
+.token.operator {
+  color: $operator;
+}
+
+.token.atrule,
+.token.keyword,
+.token.regex {
+  color: $keyword;
+}
+
+.token.function {
+  color: $function;
+}
+
+.language-css,
+.token.boolean,
+.token.class-name {
+  color: $class !important;
+}
+
+.token.variable {
+  color: $variable;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre::-moz-selection,
+pre::-moz-selection,
+code::-moz-selection,
+code::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre::selection,
+pre::selection,
+code::selection,
+code::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
