@@ -25,7 +25,14 @@ const Card: React.FC<PropTypes> = ({
 }) => (
   <section className="card">
     <section className="card__cover">
-      {cover && <Img className="card__image" fluid={cover} alt={title} />}
+      {cover && (
+        <Img
+          className="card__image"
+          fluid={cover}
+          alt={title}
+          draggable={false}
+        />
+      )}
     </section>
     <p className="card__category uppercase">{category}</p>
     <h4 className="card__title">{title}</h4>
