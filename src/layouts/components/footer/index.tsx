@@ -18,7 +18,7 @@ const Footer = () => (
             className="footer__menu"
             key={index}
             href={item.link}
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
           >
             {item.name}
