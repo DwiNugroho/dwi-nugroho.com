@@ -33,15 +33,17 @@ const Navbar = () => {
       <section className="navbar__icons">
         <a
           href="https://www.linkedin.com/in/dwi-nugroho-462126138/"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           target="_blank"
+          title="LinkedIn"
         >
           <LinkedIn />
         </a>
         <a
           href="https://github.com/DwiNugroho"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           target="_blank"
+          title="Github"
         >
           <Github />
         </a>
