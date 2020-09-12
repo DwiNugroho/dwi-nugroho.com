@@ -1,7 +1,7 @@
 ---
 path: '/another-post'
 date: '2020-09-12'
-title: 'Random Post'
+title: 'Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript'
 description: 'Lets make our screenshot prettier by using a software called Imagemagick. In this post, we will add some fancy effects like backdrop, shadow, border, and rounded corner with a simple script.'
 tags:
   - javascript

@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass-resources`,
       options: {
-        resources: [path.resolve(`./src/styles/main.scss`)],
+        resources: [path.resolve(`./src/assets/scss/main.scss`)],
       },
     },
     {
@@ -41,18 +41,11 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `post`,
-        path: `${__dirname}/src/post`,
+        path: `${__dirname}/content`,
       },
     },
     {
@@ -79,7 +72,7 @@ module.exports = {
         background_color: `#1A1C21`,
         theme_color: `#1A1C21`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/new-moon-emoji.png`, // This path is relative to the root of the site.
       },
     },
     {

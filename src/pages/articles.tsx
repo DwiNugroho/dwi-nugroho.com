@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
 
+import SEO from '@/components/seo';
 import Layout from '@/layouts/default';
 import Card from '@/components/card';
 
@@ -32,6 +33,7 @@ type PropTypes = {
 
 const Articles: React.FC<PageProps<PropTypes>> = ({ data }) => (
   <Layout>
+    <SEO title="Articles" />
     <section className="container">
       <section className="list-articles">
         {data.allMarkdownRemark.edges.map((item, index) => (
