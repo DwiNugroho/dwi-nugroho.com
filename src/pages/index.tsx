@@ -8,8 +8,13 @@ import Card from '@/components/card';
 type edgesTypes = {
   node: {
     id: string;
+    excerpt?: string;
     frontmatter: {
-      cover?: string;
+      cover?: {
+        childImageSharp: {
+          fluid: object;
+        };
+      };
       title: string;
       path: string;
       description?: string;
@@ -40,10 +45,14 @@ const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
             to={item.node.frontmatter.path}
           >
             <Card
-              cover={item.node.frontmatter.cover}
+              cover={
+                item.node.frontmatter.cover
+                  ? item.node.frontmatter.cover.childImageSharp.fluid
+                  : null
+              }
               // category={item.node.frontmatter.category}
               title={item.node.frontmatter.title}
-              description={item.node.frontmatter.description}
+              description={item.node.excerpt}
               date={item.node.frontmatter.date}
               tag={item.node.frontmatter.tags}
             />
@@ -56,16 +65,25 @@ const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
 
 export const query = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      limit: 6
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           id
+          excerpt
           frontmatter {
             title
             path
-            description
-            tags
             date(formatString: "dddd, DD MMMM YYYY")
+            cover {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
