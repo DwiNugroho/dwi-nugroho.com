@@ -55,7 +55,19 @@ module.exports = {
         path: `${__dirname}/src/post`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '÷',
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

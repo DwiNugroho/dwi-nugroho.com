@@ -7,7 +7,7 @@ interface PropTypes {
 }
 
 const Tag: React.FC<PropTypes> = ({ children, color = 'gray', className }) => (
-  <span className={`tag tag--${color} ${className}`}>{children}</span>
+  <span className={`dn-tag dn-tag--${color} ${className}`}>{children}</span>
 );
 
 export default Tag;

@@ -37,7 +37,7 @@ const Articles: React.FC<PageProps<PropTypes>> = ({ data }) => (
           >
             <Card
               cover={item.node.frontmatter.cover}
-              category={item.node.frontmatter.category}
+              // category={item.node.frontmatter.category}
               title={item.node.frontmatter.title}
               description={item.node.frontmatter.description}
               date={item.node.frontmatter.date}
@@ -55,7 +55,7 @@ const Articles: React.FC<PageProps<PropTypes>> = ({ data }) => (
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       edges {
         node {
           id
@@ -65,7 +65,6 @@ export const query = graphql`
             description
             tags
             date(formatString: "dddd, DD MMMM YYYY")
-            category
           }
         }
       }

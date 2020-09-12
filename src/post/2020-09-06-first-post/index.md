@@ -32,6 +32,12 @@ Backdrop is actually just a really thicc border. Here's how to do that on imagem
 convert source.png -bordercolor white -border 10 result.png
 ```
 
+```html
+<section>
+  <h1>Halo</h1>
+</section>
+```
+
 You can adjust the color by changing the `bordercolor` value. I use white because it looks nice to me. You can use HEX, RGB, and RGBA format. For more references, go to [their website](https://imagemagick.org/script/color.php).
 
 To adjust the thickness of it, you change the `border` value. I use 10 here because it's not too big and it's not too small for me.
