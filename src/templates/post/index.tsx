@@ -41,6 +41,7 @@ const Post: FC<PageProps<DataProps>> = ({ data }) => {
             className="post-template__cover-img"
             fluid={post.frontmatter.cover.childImageSharp.fluid}
             alt={post.frontmatter.title}
+            draggable={false}
           />
         )}
       </section>
