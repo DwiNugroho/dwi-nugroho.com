@@ -1,7 +1,7 @@
 .card {
   &__cover {
     width: 100%;
-    height: 220px;
+    height: 200px;
     background: $black;
     border-radius: 4px;
     margin-bottom: 16px;
@@ -11,6 +11,12 @@
       object-fit: cover;
       border-radius: 4px;
     }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
   }
   &__category {
     color: $blue;

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Img from 'gatsby-image';
 import Tag from '@/components/tag';
 
 import './style.scss';
 
 interface PropTypes {
-  cover?: string;
+  // eslint-disable-next-line
+  cover?: any;
   category?: string;
   title: string;
   description?: string;
@@ -14,7 +16,7 @@ interface PropTypes {
 }
 
 const Card: React.FC<PropTypes> = ({
-  // cover,
+  cover,
   category,
   title,
   description,
@@ -23,10 +25,7 @@ const Card: React.FC<PropTypes> = ({
 }) => (
   <section className="card">
     <section className="card__cover">
-      <img
-        src="https://static.ghost.org/v3.0.0/images/writing-posts-with-ghost.png"
-        alt={title}
-      />
+      <Img className="card__image" fluid={cover} alt={title} />
     </section>
     <p className="card__category uppercase">{category}</p>
     <h4 className="card__title">{title}</h4>

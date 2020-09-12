@@ -36,6 +36,7 @@
     &:hover,
     &[aria-current='page'] {
       border-bottom: 1px solid $gray;
+      color: $gray;
     }
   }
   &__icons {
