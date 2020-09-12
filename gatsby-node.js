@@ -17,7 +17,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const postTemplate = path.resolve('./src/templates/post.tsx');
+  const postTemplate = path.resolve('./src/templates/post/index.tsx');
 
   return graphql(`
     {

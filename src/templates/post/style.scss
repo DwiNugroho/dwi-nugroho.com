@@ -1,0 +1,28 @@
+.post-template {
+  &__title {
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 52px;
+    @include media-breakpoint-down(md) {
+      font-size: 32px;
+      line-height: 44px;
+    }
+  }
+  &__date {
+    margin-top: -24px;
+    color: $gray;
+    font-weight: 300;
+    font-size: 16px;
+  }
+  &__cover {
+    padding: 0;
+    @include media-breakpoint-down(md) {
+      max-width: 100vw;
+    }
+  }
+  &__cover-img {
+    @include media-breakpoint-up(md) {
+      border-radius: 4px;
+    }
+  }
+}

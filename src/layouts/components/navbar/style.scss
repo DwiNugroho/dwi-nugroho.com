@@ -5,6 +5,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 60px;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 28px;
+  }
   &__content {
     display: flex;
     align-items: center;
