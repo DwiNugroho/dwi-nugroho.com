@@ -5,6 +5,7 @@ title: 'My Third Gatsby Post'
 description: 'Lets make our screenshot prettier by using a software called Imagemagick. In this post, we will add some fancy effects like backdrop, shadow, border, and rounded corner with a simple script.'
 tags:
   - javascript
+# cover: './images/javascript-cover.svg'
 ---
 
 ## Introduction

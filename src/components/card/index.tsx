@@ -1,21 +1,25 @@
 import React from 'react';
 
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 import Tag from '@/components/tag';
 
 import './style.scss';
 
-interface PropTypes {
-  // eslint-disable-next-line
-  cover?: any;
+export interface CardTypes {
+  cover?: {
+    childImageSharp: {
+      fluid: FluidObject;
+    };
+  };
   category?: string;
   title: string;
   description?: string;
   date?: string;
   tag?: Array<string>;
+  path: string;
 }
 
-const Card: React.FC<PropTypes> = ({
+const Card: React.FC<CardTypes> = ({
   cover,
   category,
   title,
@@ -28,7 +32,7 @@ const Card: React.FC<PropTypes> = ({
       {cover && (
         <Img
           className="card__image"
-          fluid={cover}
+          fluid={cover.childImageSharp.fluid}
           alt={title}
           draggable={false}
         />
