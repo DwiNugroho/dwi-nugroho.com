@@ -32,10 +32,18 @@ body {
 
 blockquote {
   margin: 2rem 0;
-  padding: 1rem;
-  background: rgba($color: $slategray, $alpha: 0.4);
+  padding: 24px;
+  background: $gold;
+  color: $dark;
   border-radius: 0.35rem;
   font-weight: 400;
+  a {
+    color: $dark;
+    &:hover {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
 }
 
 blockquote :not(pre) > code[class*='language-'] {
