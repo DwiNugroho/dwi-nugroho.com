@@ -77,9 +77,7 @@ const handleInputChange = event => {
 > - Revenue was off the chart.
 > - Profits were higher than ever.
 >
->   _Everything_ is going according to **plan**.
->
-> <a href="www.google.com">halo</a>
+>   _Everything_ is going according to [plan](https://google.com).
 
 ```shell
 $ yarn add jest babel-jest vue-jest @vue/test-utils -D
