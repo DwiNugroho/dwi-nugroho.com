@@ -8,8 +8,6 @@ tags:
 cover: './images/admin-settings.png'
 ---
 
-![wallpaper](https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg)
-
 dshjds `dsdsdsfdsf` dsffsd
 
 ```markup
@@ -94,5 +92,7 @@ $ yarn add jest babel-jest vue-jest @vue/test-utils -D
 # atau
 $ npm i jest babel-jest vue-jest @vue/test-utils --dev
 ```
+
+![wallpaper](./images/admin-settings.png)
 
 Lorem ipsum dolor sit amet, <a href="https://google.com">consectetur adipiscing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
