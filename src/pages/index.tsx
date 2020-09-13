@@ -3,31 +3,17 @@ import { Link, graphql, PageProps } from 'gatsby';
 
 import SEO from '@/components/seo';
 import Layout from '@/layouts/default';
-import Card from '@/components/card';
-
-type edgesTypes = {
-  node: {
-    id: string;
-    excerpt?: string;
-    frontmatter: {
-      cover?: {
-        childImageSharp: {
-          fluid: object;
-        };
-      };
-      title: string;
-      path: string;
-      description?: string;
-      date?: string;
-      category?: string;
-      tags?: string[];
-    };
-  };
-}[];
+import Card, { CardTypes } from '@/components/card';
 
 type PropTypes = {
   allMarkdownRemark: {
-    edges: edgesTypes;
+    edges: {
+      node: {
+        id: string;
+        excerpt?: string;
+        frontmatter: CardTypes;
+      };
+    }[];
   };
 };
 
@@ -45,16 +31,13 @@ const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
             to={item.node.frontmatter.path}
           >
             <Card
-              cover={
-                item.node.frontmatter.cover
-                  ? item.node.frontmatter.cover.childImageSharp.fluid
-                  : null
-              }
+              path={item.node.frontmatter.path}
+              cover={item.node.frontmatter.cover}
               // category={item.node.frontmatter.category}
               title={item.node.frontmatter.title}
               description={item.node.excerpt}
               date={item.node.frontmatter.date}
-              tag={item.node.frontmatter.tags}
+              // tag={item.node.frontmatter.tags}
             />
           </Link>
         ))}

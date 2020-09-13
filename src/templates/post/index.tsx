@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 
 import Layout from '@/layouts/default';
 import SEO from '@/components/seo';
@@ -17,8 +17,7 @@ interface DataProps {
       date?: string;
       cover?: {
         childImageSharp: {
-          // eslint-disable-next-line
-          fluid: any;
+          fluid: FluidObject;
         };
       };
     };
