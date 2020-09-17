@@ -15,7 +15,7 @@ export interface CardTypes {
   title: string;
   description?: string;
   date?: string;
-  tag?: Array<string>;
+  tags?: Array<string>;
   path: string;
 }
 
@@ -25,7 +25,7 @@ const Card: React.FC<CardTypes> = ({
   title,
   description,
   date,
-  tag,
+  tags,
 }) => (
   <section className="card">
     <section className="card__cover">
@@ -43,8 +43,8 @@ const Card: React.FC<CardTypes> = ({
     <p className="card__description">{description}</p>
     <p className="card__date">{date}</p>
     <section className="card__tag">
-      {tag &&
-        tag.map((item, index) => (
+      {tags &&
+        tags.map((item, index) => (
           <Tag key={index} color="blue">
             {item}
           </Tag>
