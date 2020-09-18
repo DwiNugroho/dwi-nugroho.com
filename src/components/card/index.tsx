@@ -39,7 +39,7 @@ const Card: React.FC<CardTypes> = ({
       )}
     </section>
     <p className="card__category uppercase">{category}</p>
-    <h4 className="card__title">{title}</h4>
+    <h3 className="card__title">{title}</h3>
     <p className="card__description">{description}</p>
     <p className="card__date">{date}</p>
     <section className="card__tag">

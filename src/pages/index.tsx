@@ -28,9 +28,9 @@ const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
           <Link
             key={index}
             className={`home-articles__item ${
-              data.allMarkdownRemark.edges.length > 2 && index === 0
-                ? 'home-articles__item--width-100'
-                : ''
+              data.allMarkdownRemark.edges.length > 2 &&
+              index === 0 &&
+              'home-articles__item--width-100'
             }`}
             to={item.node.frontmatter.path}
           >
