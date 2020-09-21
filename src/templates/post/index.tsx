@@ -15,6 +15,8 @@ interface DataProps {
       title: string;
       author?: string;
       date?: string;
+      description?: string;
+      tagas?: string[];
       cover?: {
         childImageSharp: {
           fluid: FluidObject;
@@ -31,6 +33,9 @@ const Post: FC<PageProps<DataProps>> = ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <section className="post-container">
         <h1 className="post-template__title">{post.frontmatter.title}</h1>
+        <p className="post-template__description">
+          {post.frontmatter.description}
+        </p>
         <hr />
         <p className="post-template__date">{`${post.frontmatter.date} • ${post.timeToRead} min read`}</p>
       </section>
@@ -64,6 +69,8 @@ export const query = graphql`
       frontmatter {
         date(formatString: "dddd, DD MMMM YYYY")
         title
+        description
+        tags
         cover {
           childImageSharp {
             fluid(maxWidth: 930) {

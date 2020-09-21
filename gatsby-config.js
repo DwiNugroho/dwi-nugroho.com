@@ -57,6 +57,7 @@ module.exports = {
             options: {
               maxWidth: 690,
               loading: 'lazy',
+              backgroundColor: 'transparent',
             },
           },
           {

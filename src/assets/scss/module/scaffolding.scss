@@ -44,8 +44,17 @@ blockquote {
       text-decoration: underline;
     }
   }
+  ::selection {
+    background: $black;
+    color: $light;
+  }
 }
 
 blockquote :not(pre) > code[class*='language-'] {
   background: rgba(0, 0, 0, 0.1) !important;
+}
+
+::selection {
+  background: $gold;
+  color: $black;
 }
