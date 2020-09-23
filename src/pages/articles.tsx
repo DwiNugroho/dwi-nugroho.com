@@ -33,7 +33,9 @@ const Articles: React.FC<PageProps<PropTypes>> = ({ data }) => (
               cover={item.node.frontmatter.cover}
               // category={item.node.frontmatter.category}
               title={item.node.frontmatter.title}
-              description={item.node.excerpt}
+              description={
+                item.node.frontmatter.description || item.node.excerpt
+              }
               date={item.node.frontmatter.date}
               tags={item.node.frontmatter.tags}
             />
@@ -62,6 +64,7 @@ export const query = graphql`
             path
             date(formatString: "dddd, DD MMMM YYYY")
             tags
+            description
             cover {
               childImageSharp {
                 fluid(maxWidth: 900) {

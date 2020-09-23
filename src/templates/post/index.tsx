@@ -11,6 +11,7 @@ interface DataProps {
   markdownRemark: {
     html: string;
     timeToRead?: number;
+    excerpt?: string;
     frontmatter: {
       title: string;
       author?: string;
@@ -30,7 +31,10 @@ const Post: FC<PageProps<DataProps>> = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
       <section className="post-container">
         <h1 className="post-template__title">{post.frontmatter.title}</h1>
         <p className="post-template__description">
