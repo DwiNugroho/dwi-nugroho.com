@@ -8,10 +8,10 @@ export const navbar: navbarType = [
   //   name: 'Home',
   //   path: '/',
   // },
-  {
-    name: 'Articles',
-    path: '/articles',
-  },
+  // {
+  //   name: 'Articles',
+  //   path: '/articles',
+  // },
   // {
   //   name: 'Tags',
   //   path: '/tags',

@@ -19,9 +19,9 @@ type PropTypes = {
 
 const IndexPage: React.FC<PageProps<PropTypes>> = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Dwi Nugroho's Blog" />
     <section className="container">
-      <h1>Popular Articles</h1>
+      <h1>Latest Articles</h1>
       <hr />
       <section className="home-articles">
         {data.allMarkdownRemark.edges.map((item, index) => (
