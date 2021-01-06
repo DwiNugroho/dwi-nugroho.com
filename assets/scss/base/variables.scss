@@ -1,0 +1,64 @@
+// colors
+
+$darker-blue: #227fa5;
+$blue: #2daadc;
+$light-blue: #c6e5f2;
+$lighter-blue: #e5f4fb;
+
+$darker-orange: #bc8f40;
+$orange: #fbbf55;
+$light-orange: #ffefe4;
+$lighter-orange: #f8f5f0;
+
+$darker-red: #a94a42;
+$red: #e16358;
+$light-red: #f4c4c0;
+$lighter-red: #fbebea;
+
+// $darker-green: #065531;
+// $green: #09864c;
+// $light-green: #b7fadb;
+// $lighter-green: #f5fefa;
+
+$black: #121212;
+$light-black: #666665;
+$lighter-black: #e5e4e2;
+
+// $gray: #8d959e;
+// $smoke-gray: #b0b7bc;
+// $light-smoke: #c7ccd0;
+// $pale-smoke: #dee1e5;
+
+$white: #fffefc;
+
+$color-list: (
+  darker-blue: $darker-blue,
+  blue: $blue,
+  light-blue: $light-blue,
+  lighter-blue: $lighter-blue,
+  darker-orange: $darker-orange,
+  orange: $orange,
+  light-orange: $light-orange,
+  lighter-orange: $lighter-orange,
+  darker-red: $darker-red,
+  red: $red,
+  light-red: $light-red,
+  lighter-red: $lighter-red,
+  // darker-green: $darker-green,
+  // green: $green,
+  // light-green: $light-green,
+  // lighter-green: $lighter-green,
+  black: $black,
+  light-black: $light-black,
+  lighter-black: $lighter-black,
+  // gray: $gray,
+  // smoke-gray: $smoke-gray,
+  // light-smoke: $light-smoke,
+  // pale-smoke: $pale-smoke,
+  white: $white,
+);
+
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 992px;
+$media-xl: 1200px;

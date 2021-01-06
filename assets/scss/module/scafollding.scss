@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: $black;
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-top: 0 !important;
+}
+
+button {
+  cursor: pointer;
+  &:disabled,
+  [disabled] {
+    cursor: not-allowed;
+  }
+}
+
+::selection {
+  background: $light-blue;
+}
+
+.main {
+  &__title {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+  }
+  &__subtitle {
+    font-size: 1.4em;
+    margin-bottom: 0.2em;
+  }
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.6em;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $lighter-black;
+}
+
+.text {
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--bold {
+    font-weight: 500;
+  }
+
+  &--underline {
+    text-decoration: underline !important;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--desktop {
+    @include breakpoint-down(lg) {
+      display: block;
+    }
+  }
+
+  &--mobile {
+    @include breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+  &--align-start {
+    align-items: flex-start;
+  }
+  &--align-end {
+    align-items: flex-end;
+  }
+  &--align-center {
+    align-items: center;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+  &--justify-start {
+    justify-content: flex-start;
+  }
+  &--justify-end {
+    justify-content: flex-end;
+  }
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &__item {
+    &--flex-1 {
+      flex: 1;
+    }
+  }
+}
+
+.cursor {
+  &--pointer {
+    cursor: pointer;
+  }
+  &--default {
+    cursor: default;
+  }
+}
+
+.component {
+  &--desktop-visible {
+    @include breakpoint-down(lg) {
+      display: none;
+    }
+  }
+  &--mobile-visible {
+    @include breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}
+
+.position {
+  &--relative {
+    position: relative;
+  }
+}

@@ -1,0 +1,93 @@
+// breakpoint - Responsive
+@mixin breakpoint-up($media) {
+  @if $media == sm {
+    @media (min-width: $media-sm) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: $media-md) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: $media-lg) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media (min-width: $media-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-down($media) {
+  @if $media == sm {
+    @media (max-width: $media-sm - 1) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (max-width: $media-md - 1) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (max-width: $media-lg - 1) {
+      @content;
+    }
+  } @else if $media == xl {
+    @media (max-width: $media-xl - 1) {
+      @content;
+    }
+  }
+}
+
+@mixin create-class-by-color($prefix, $property) {
+  @each $name, $color in $color-list {
+    .#{$prefix}--#{$name} {
+      #{$property}: $color;
+    }
+  }
+}
+
+// width from 0% - 100%
+
+.width {
+  @for $i from 0 through 20 {
+    $size: 5 * $i;
+    &--#{$size} {
+      width: $size * 1%;
+    }
+  }
+  &-desktop {
+    @include breakpoint-up(lg) {
+      @for $i from 0 through 20 {
+        $size: 5 * $i;
+        &--#{$size} {
+          width: $size * 1%;
+        }
+      }
+    }
+  }
+  &-mobile {
+    @include breakpoint-down(lg) {
+      @for $i from 0 through 20 {
+        $size: 5 * $i;
+        &--#{$size} {
+          width: $size * 1%;
+        }
+      }
+    }
+  }
+}
+
+.text--weight {
+  @for $i from 1 through 9 {
+    $size: 100 * $i;
+    &-#{$size} {
+      font-weight: $size !important;
+    }
+  }
+}
+
+// create class for text color and background color
+
+@include create-class-by-color('text', 'color');
+@include create-class-by-color('background', 'background-color');

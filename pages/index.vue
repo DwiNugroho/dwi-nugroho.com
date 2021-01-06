@@ -1,70 +1,49 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">dwi-nugroho.com</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <section>
+    <section class="main mt-5">
+      <h1 class="main__title">Hello, I'm Dwi Nugroho</h1>
+      <p class="main__subtitle text--light-black" style="max-width: 700px">
+        Web developer specializing in modern JavaScript. I build things with
+        code, make digital products to improve how humans living their life.
+      </p>
+    </section>
+    <br />
+    <br /><br />
+    <section
+      class="flex flex--align-stretch flex--wrap flex--justify-space-between"
+    >
+      <section
+        v-for="(item, index) in [...articles, ...articles, ...articles]"
+        :key="index"
+        class="width--45 mb-4"
+      >
+        <dwi-article-card
+          :thumbnail="item.cover"
+          :title="item.title"
+          :description="item.description"
+          :date="item.date"
+          :slug="item.slug"
+        />
+      </section>
+    </section>
+    <br /><br />
+  </section>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
-export default Vue.extend({})
+export default Vue.extend({
+  name: 'Home',
+  async asyncData({ $content }) {
+    const articles = await $content('articles')
+      .only(['title', 'description', 'date', 'slug', 'cover'])
+      .fetch();
+    return { articles };
+  },
+});
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss" ArticleCardscoped>
+//
 </style>
