@@ -1,0 +1,84 @@
+// colors
+
+// $super-dark-blue: #162c50;
+// $darker-blue: #1c417d;
+// $blue: #2557a7;
+// $light-blue: #c0d3f1;
+// $lighter-blue: #f1f6fe;
+
+// $darker-orange: #bc5206;
+// $orange: #ef6807;
+// $light-orange: #fdd3b5;
+// $lighter-orange: #fef7f1;
+
+// $darker-red: #991d0a;
+// $red: #c0240c;
+// $light-red: #fac0b7;
+// $lighter-red: #feeeec;
+
+// $darker-green: #065531;
+// $green: #09864c;
+// $light-green: #b7fadb;
+// $lighter-green: #f5fefa;
+$dark-red: #9e5551;
+$red: #e16259;
+$light-red: #ffd2d7;
+$lighter-red: #fdf5f2;
+
+$dark-blue: #406b85;
+$blue: #2eaadc;
+$light-blue: #abddf1;
+$lighter-blue: #eaf7fc;
+
+$black: #121212;
+$light-black: #40403f;
+$lighter-black: #666665;
+
+$gray: #999897;
+$quill-gray: #e4e4e3;
+$white: #fffefc;
+
+$spring-wood: #f8f5f0;
+
+$color-list: (
+  // 'super-dark-blue': $super-dark-blue,
+  // 'darker-blue': $darker-blue,
+  // 'blue': $blue,
+  // 'light-blue': $light-blue,
+  // 'lighter-blue': $lighter-blue,
+  // 'darker-orange': $darker-orange,
+  // 'orange': $orange,
+  // 'light-orange': $light-orange,
+  // 'lighter-orange': $lighter-orange,
+  // 'darker-red': $darker-red,
+  // 'red': $red,
+  // 'light-red': $light-red,
+  // 'lighter-red': $lighter-red,
+  // 'darker-green': $darker-green,
+  // 'green': $green,
+  // 'light-green': $light-green,
+  // 'lighter-green': $lighter-green,
+  'dark-red': $dark-red,
+  'red': $red,
+  'light-red': $light-red,
+  'lighter-red': $lighter-red,
+  'dark-blue': $dark-blue,
+  'blue': $blue,
+  'light-blue': $light-blue,
+  'lighter-blue': $lighter-blue,
+  'black': $black,
+  'light-black': $light-black,
+  'lighter-black': $lighter-black,
+  'gray': $gray,
+  'quill-gray': $quill-gray,
+  // 'smoke-gray': $smoke-gray,
+  // 'light-smoke': $light-smoke,
+  // 'pale-smoke': $pale-smoke,
+  'white': $white,
+  'spring-wood': $spring-wood
+);
+
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 992px;
+$media-xl: 1200px;

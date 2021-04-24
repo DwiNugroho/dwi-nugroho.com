@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8080",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -14,11 +14,28 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@types/react": "^17.0.3",
     "gatsby": "^3.1.2",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-sass": "^4.2.0",
+    "gatsby-plugin-sass-resources": "^2.0.0",
+    "gatsby-plugin-typography": "^3.2.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-typography": "^0.16.19",
+    "sass": "^1.32.8",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@types/typography": "^0.16.3",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "2.2.1"
   },
   "repository": {

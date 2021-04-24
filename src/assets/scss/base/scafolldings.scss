@@ -1,0 +1,197 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: $black;
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+}
+
+.component {
+  &--desktop-visible {
+    @include breakpoint-down(lg) {
+      display: none;
+    }
+  }
+  &--mobile-visible {
+    @include breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+  &--align-start {
+    align-items: flex-start;
+  }
+  &--align-end {
+    align-items: flex-end;
+  }
+  &--align-center {
+    align-items: center;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+  &--justify-start {
+    justify-content: flex-start;
+  }
+  &--justify-end {
+    justify-content: flex-end;
+  }
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+}
+
+.text {
+  &--left {
+    text-align: left;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--right {
+    text-align: right;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--bold {
+    font-weight: 500;
+  }
+
+  &--underline {
+    text-decoration: underline !important;
+  }
+}
+
+// a {
+//   text-decoration: none;
+// }
+
+// button {
+//   cursor: pointer;
+//   &:disabled,
+//   [disabled] {
+//     cursor: not-allowed;
+//   }
+// }
+hr {
+  background-color: $quill-gray !important;
+}
+
+// hr {
+//   border: none;
+//   border-top: 1px solid darken($color: $white, $amount: 4%);
+//   &.pale-smoke {
+//     border-top: 1px solid $pale-smoke !important;
+//   }
+//   &.smoke-gray {
+//     border-top: 1px solid #dee1e5;
+//   }
+// }
+
+// mark {
+//   background: linear-gradient(rgba(255, 255, 255, 0) 55%, $light-orange 50%);
+// }
+
+// .border {
+//   border: 1px solid $pale-smoke;
+//   border-radius: 4px;
+// }
+
+// .place-items-center {
+//   display: grid;
+//   place-items: center !important;
+// }
+
+// .cursor {
+//   &--pointer {
+//     cursor: pointer;
+//   }
+// }
+
+// .position {
+//   &--sticky {
+//     @include breakpoint-up(lg) {
+//       position: -webkit-sticky;
+//       position: sticky;
+//       top: 96px;
+//     }
+//   }
+//   &--relative {
+//     position: relative;
+//   }
+//   &--fixed {
+//     position: fixed;
+//   }
+// }
+
+// .animation {
+//   animation-duration: 1s !important;
+//   transition-duration: 1s !important;
+//   animation-fill-mode: both;
+//   &__tada {
+//     animation-name: tada;
+//   }
+// }
+
+// @keyframes tada {
+//   from {
+//     transform: scale3d(1, 1, 1);
+//   }
+
+//   10%,
+//   20% {
+//     transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+//   }
+
+//   30%,
+//   50%,
+//   70%,
+//   90% {
+//     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+//   }
+
+//   40%,
+//   60%,
+//   80% {
+//     transform: scale3d(1.2, 1.2, 1.2) rotate3d(0, 0, 1, -3deg);
+//   }
+
+//   to {
+//     transform: scale3d(1, 1, 1);
+//   }
+// }
