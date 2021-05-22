@@ -10,7 +10,7 @@ import './style.scss';
 
 export default () => {
   return (
-    <Template>
+    <Template title="Home">
       <section className="width--100 background--spring-wood">
         <section className="container">
           <section className="flex flex--align-center py-5">
@@ -25,9 +25,10 @@ export default () => {
                 team.
               </p>
             </section>
-            <section className="width--100 flex flex--justify-end">
+            <div className="mx-5 my-5"></div>
+            <section className="flex flex--justify-end component--desktop-visible">
               <section
-                style={{ width: '300px', height: '300px', maxWidth: '300px' }}
+                style={{ width: '304px', height: '304px', maxWidth: '304px' }}
               >
                 <Img
                   src="dwi-nugroho.jpeg"
@@ -46,7 +47,7 @@ export default () => {
         <section className="flex flex--align-center flex--justify-space-between mb-3">
           <h2 className="mb-0">Popular Articles.</h2>
           <Link to="">
-            <Button color="blue">View all</Button>
+            <Button color="yellow">View all</Button>
           </Link>
         </section>
         <hr />

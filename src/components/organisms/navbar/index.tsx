@@ -19,30 +19,59 @@ export const Navbar: React.FC<Props> = () => {
   }, []);
 
   return (
-    <section className="width--100">
+    <section className="organism-navbar background--white width--100">
       <nav
-        className="organism-navbar container flex flex--align-center flex--justify-space-between width--100"
-        style={{ minHeight: '100px' }}
+        className="container flex flex--align-center flex--justify-space-between width--100"
+        style={{ minHeight: '84px' }}
       >
         <Link to="">
           <h3 className="mb-0">DwiNugroho</h3>
         </Link>
         <section className="component--desktop-visible flex flex--align-center">
-          <Link to="" className="organism-navbar__item mx-2">
+          {/* <Link
+            to="/"
+            className="organism-navbar__item mx-3"
+            activeClassName="organism-navbar__item--active"
+          >
             <p>Home</p>
+          </Link> */}
+          <Link
+            to="/blog"
+            className="organism-navbar__item mx-3"
+            activeClassName="organism-navbar__item--active"
+          >
+            <p>Blog</p>
           </Link>
-          <Link to="" className="organism-navbar__item mx-2">
-            <p>Articles</p>
+          <Link
+            to="/projects"
+            className="organism-navbar__item mx-3"
+            activeClassName="organism-navbar__item--active"
+          >
+            <p>Projects</p>
           </Link>
-          <Link to="" className="organism-navbar__item mx-2">
-            <p>About</p>
+          <Link
+            to="/me"
+            className="organism-navbar__item mx-3"
+            activeClassName="organism-navbar__item--active"
+          >
+            <p>About Me</p>
           </Link>
         </section>
-        <section className="component--desktop-visible flex flex--align-center">
-          <a data-tip="LinkedIn" href="" className="organism-navbar__item mx-2">
+        <section className="flex flex--align-center">
+          <a
+            data-tip="LinkedIn"
+            href="https://www.linkedin.com/in/dwi-nugroho-462126138/"
+            target="_blank"
+            className="organism-navbar__item mx-2"
+          >
             <LinkedIn />
           </a>
-          <a data-tip="Github" href="" className="organism-navbar__item mx-2">
+          <a
+            data-tip="Github"
+            href="https://github.com/DwiNugroho"
+            target="_blank"
+            className="organism-navbar__item mx-2"
+          >
             <Github />
           </a>
 

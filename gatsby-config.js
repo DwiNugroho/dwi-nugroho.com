@@ -8,6 +8,11 @@ const path = require('path');
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `Dwi Nugroho`,
+    description: `Digital Garden by Dwi Nugroho`,
+    author: `@dwinugroho`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-typescript`,
@@ -70,5 +75,17 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Dwi Nugroho`,
+        short_name: `Dwi Nugroho`,
+        start_url: `/`,
+        // background_color: `#663399`,
+        // theme_color: `#663399`,
+        // display: `minimal-ui`,
+        icon: `src/assets/img/dwi-nugroho.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 };
