@@ -65,6 +65,12 @@ export const Img: React.FC<Props> = ({
     }
   `);
 
+  const [isClient, setClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setClient(true);
+  }, []);
+
   const match = React.useMemo(
     () => data.images.edges.find(({ node }) => src === node.relativePath),
     [data, src]
@@ -102,18 +108,20 @@ export const Img: React.FC<Props> = ({
   }
 
   return (
-    <GatsbyImage
-      fluid={childImageSharp.fluid}
-      draggable={draggable}
-      alt={alt}
-      className={className}
-      style={style}
-    />
+    isClient && (
+      <GatsbyImage
+        fluid={childImageSharp.fluid}
+        draggable={draggable}
+        alt={alt}
+        className={className}
+        style={style}
+      />
+    )
   );
 };
 
 Img.defaultProps = {
-  alt: null,
+  alt: '',
   draggable: false,
 };
 
