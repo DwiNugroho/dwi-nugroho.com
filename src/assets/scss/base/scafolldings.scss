@@ -10,17 +10,18 @@ body {
   padding: 0;
   margin: 0;
   background-color: $white;
+  font-family: 'Inter' sans-serif !important;
 }
 
 .component {
   &--desktop-visible {
     @include breakpoint-down(lg) {
-      display: none;
+      display: none !important;
     }
   }
   &--mobile-visible {
     @include breakpoint-up(lg) {
-      display: none;
+      display: none !important;
     }
   }
 }
@@ -97,19 +98,26 @@ body {
   }
 }
 
-// a {
-//   text-decoration: none;
-// }
+a {
+  text-decoration: none;
+  color: $black;
+}
 
-// button {
-//   cursor: pointer;
-//   &:disabled,
-//   [disabled] {
-//     cursor: not-allowed;
-//   }
-// }
+button {
+  cursor: pointer;
+  &:disabled,
+  [disabled] {
+    cursor: not-allowed;
+  }
+}
+
 hr {
   background-color: $quill-gray !important;
+}
+
+::selection {
+  color: $black;
+  background: $light-yellow;
 }
 
 // hr {

@@ -1,0 +1,9 @@
+.organism-footer {
+  &__item {
+    font-weight: 500;
+    color: $light-black;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}

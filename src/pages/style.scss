@@ -1,0 +1,15 @@
+.popular-articles {
+  margin: -16px 0 0 -32px;
+  width: calc(100% + 32px);
+  &__item {
+    flex: 1 1 calc((100% / 3) - 32px) !important;
+    margin: 32px 0 0 32px;
+    &:nth-child(1) {
+      flex: 1 1 calc(100% - 32px);
+    }
+    &:nth-child(5),
+    &:nth-child(6) {
+      flex: 1 1 calc((100% / 2) - 32px);
+    }
+  }
+}
