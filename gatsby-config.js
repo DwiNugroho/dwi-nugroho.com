@@ -35,6 +35,16 @@ module.exports = {
       },
     },
 
+    // SVG
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      // options: {
+      //   rule: {
+      //     include: /assets/,
+      //   },
+      // },
+    },
+
     // alias
     {
       resolve: `gatsby-plugin-alias-imports`,
@@ -42,9 +52,23 @@ module.exports = {
         alias: {
           '@': path.resolve(__dirname, 'src'),
           '@components': path.resolve(__dirname, 'src/components'),
+          '@atoms': path.resolve(__dirname, 'src/components/atoms'),
+          '@molecules': path.resolve(__dirname, 'src/components/molecules'),
+          '@organisms': path.resolve(__dirname, 'src/components/organisms'),
+          '@templates': path.resolve(__dirname, 'src/components/templates'),
         },
         extensions: ['js', 'tsx', 'ts'],
       },
     },
+
+    // image
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(__dirname, 'src/assets/img'),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };

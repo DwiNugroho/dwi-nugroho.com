@@ -1,0 +1,12 @@
+.organism-navbar {
+  &__item {
+    font-weight: 500;
+    color: $light-black;
+    &:hover {
+      color: $yellow;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+  }
+}

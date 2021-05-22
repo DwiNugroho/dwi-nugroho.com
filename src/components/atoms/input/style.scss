@@ -1,0 +1,47 @@
+.atom-input {
+  font-size: 16px;
+  padding: 4px 12px;
+  border: 1px solid $quill-gray;
+  background-color: #ffffff;
+  outline-color: $blue !important;
+  border-radius: 4px;
+  color: $black;
+
+  &:disabled,
+  &[disabled] {
+    background-color: lighten($color: $quill-gray, $amount: 8%);
+  }
+
+  &--error {
+    border: 1px solid $red;
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

@@ -76,6 +76,27 @@ export default [
     ],
   },
   {
+    title: 'Yellow',
+    list: [
+      {
+        color: 'dark-yellow',
+        textColor: 'white',
+      },
+      {
+        color: 'yellow',
+        textColor: 'white',
+      },
+      {
+        color: 'light-yellow',
+        textColor: 'black',
+      },
+      {
+        color: 'lighter-yellow',
+        textColor: 'black',
+      },
+    ],
+  },
+  {
     title: 'Other',
     list: [
       {
