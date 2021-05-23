@@ -12,10 +12,10 @@ const Blog: React.FC<PageProps> = ({ data }) => {
       <section className="width--100 background--spring-wood">
         <section className="container py-5">
           <h1>Blog.</h1>
-          <p>
+          <h4 className="text--light-black">
             Posts, tutorials, snippets, musings, notes, and everything else. The
             archive of everything I've written.
-          </p>
+          </h4>
         </section>
       </section>
       <br />
