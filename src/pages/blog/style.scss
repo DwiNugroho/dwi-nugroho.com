@@ -1,0 +1,31 @@
+.hero {
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 100%;
+    min-height: 280px;
+    border: 1px solid $quill-gray;
+    @include breakpoint-up(lg) {
+      max-width: 304px;
+      height: 304px;
+    }
+  }
+}
+
+.articles {
+  margin: -16px 0 0 -32px;
+  width: calc(100% + 32px) !important;
+  &__item {
+    margin: 32px 0 0 32px;
+    flex: 0 1 calc(100% - 32px);
+
+    @include breakpoint-up(md) {
+      flex: 0 1 calc(100% / 2 - 32px);
+    }
+    @include breakpoint-up(lg) {
+      flex: 0 1 calc(100% / 3 - 32px);
+    }
+  }
+}
