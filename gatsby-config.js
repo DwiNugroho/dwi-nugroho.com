@@ -106,6 +106,50 @@ module.exports = {
         path: path.resolve(__dirname, 'content'),
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            // options: {
+            //   maxWidth: 650,
+            //   wrapperStyle: (fluidResult) => `max-width: none;`,
+            // },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              // classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              prompt: {
+                user: 'root',
+                host: 'localhost',
+                global: true,
+              },
+            },
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow',
+            },
+          },
+          'gatsby-remark-autolink-headers',
+        ],
+      },
+    },
+
+    // smooth scroll
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -128,
+      },
+    },
   ],
 };

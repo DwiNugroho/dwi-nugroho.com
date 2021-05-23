@@ -6,6 +6,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const pageTemplate = path.resolve(
     './src/components/templates/page-template/index.tsx'
   );
+  const articleTemplate = path.resolve(
+    './src/components/templates/article-template/index.tsx'
+  );
 
   return graphql(`
     {
@@ -29,6 +32,17 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: item.frontmatter.path,
           component: pageTemplate,
+          context: {
+            slug: item.frontmatter.path,
+          },
+        });
+      }
+
+      // article
+      if (item.frontmatter.type === 'article') {
+        createPage({
+          path: item.frontmatter.path,
+          component: articleTemplate,
           context: {
             slug: item.frontmatter.path,
           },

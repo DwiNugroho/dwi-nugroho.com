@@ -26,7 +26,7 @@ export const PageTemplate: React.FC<Props> = ({ data }) => {
   const { markdownRemark } = data;
   return (
     <section className="width--100">
-      <Seo title={markdownRemark.frontmatter.title} description="" />
+      <Seo title={markdownRemark.frontmatter.title} />
       <Navbar />
 
       <section
@@ -57,7 +57,7 @@ export const PageTemplate: React.FC<Props> = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query PageBySug($slug: String!) {
+  query PageBySlug($slug: String!) {
     markdownRemark(frontmatter: { path: { eq: $slug } }) {
       frontmatter {
         description

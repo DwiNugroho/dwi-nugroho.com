@@ -11,6 +11,7 @@ body {
   margin: 0;
   background-color: $white;
   font-family: 'Inter' sans-serif !important;
+  scroll-behavior: smooth;
 }
 
 .component {
@@ -102,6 +103,9 @@ a {
   text-decoration: none;
   color: $blue;
   font-weight: 600;
+  &:hover {
+    color: $dark-blue;
+  }
 }
 
 button {
@@ -119,6 +123,21 @@ hr {
 ::selection {
   color: $black;
   background: $light-yellow;
+}
+
+blockquote {
+  background-color: $blue;
+  color: $white;
+  padding: 12px 16px;
+  margin: 0 0 20px 0;
+  border-radius: 4px;
+  a {
+    color: $white;
+    text-decoration: underline;
+    &:hover {
+      color: $quill-gray;
+    }
+  }
 }
 
 // hr {
