@@ -29,7 +29,7 @@ export const Main: React.FC<Props> = ({
     <section className={`width--100 ${className}`} {...props}>
       <Seo title={title} description={description} />
       <Navbar />
-      <main style={{ minHeight: '80vh', marginTop: '84px' }}>{children}</main>
+      <main style={{ minHeight: '74vh', marginTop: '84px' }}>{children}</main>
       <Footer />
       <br />
       <br />

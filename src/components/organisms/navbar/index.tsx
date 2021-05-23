@@ -25,7 +25,7 @@ export const Navbar: React.FC<Props> = () => {
         style={{ minHeight: '84px' }}
       >
         <Link to="/">
-          <h3 className="mb-0">DwiNugroho</h3>
+          <h3 className="mb-0 text--black">DwiNugroho</h3>
         </Link>
         <section className="component--desktop-visible flex flex--align-center">
           {/* <Link

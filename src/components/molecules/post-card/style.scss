@@ -23,6 +23,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    color: $black;
     &:hover {
       color: $dark-yellow;
     }
@@ -33,6 +34,7 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-weight: 400;
   }
 }
 
