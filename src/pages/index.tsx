@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link, PageProps } from 'gatsby';
 import ReactToolTip from 'react-tooltip';
 
 import Template from '@templates/main';
@@ -12,7 +12,7 @@ import LinkedIn from '@/assets/icons/linkedin.svg';
 
 import './style.scss';
 
-export default () => {
+const Home: React.FC<PageProps> = ({ data }) => {
   const [isClient, setClient] = React.useState(false);
 
   React.useEffect(() => {
@@ -76,19 +76,31 @@ export default () => {
       <section className="container">
         <section className="flex flex--align-center flex--justify-space-between mb-3">
           <h2 className="mb-0">Popular Articles.</h2>
-          <Link to="/">
+          <Link to="/blog">
             <Button color="yellow">View all</Button>
           </Link>
         </section>
         <hr />
 
         <section className="popular-articles flex flex--wrap width--100">
-          {[1, 1, 1, 1, 1, 1].map((item, index) => (
-            <section key={index} className="popular-articles__item">
+          {(data as any).allMarkdownRemark.nodes.map((item, index) => (
+            <section
+              key={`popular-article-${index}`}
+              className="popular-articles__item"
+            >
               <PostCard
-                title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                thumbnail="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9ae6c367979383.5d37877e92943.png"
-                description="But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful."
+                title={item.frontmatter.title}
+                thumbnail={
+                  item.frontmatter.cover
+                    ? item.frontmatter.cover.childImageSharp.fluid
+                    : null
+                }
+                description={item.excerpt}
+                path={item.frontmatter.path}
+                tags={item.frontmatter.tags}
+                info={`${item.frontmatter.date || ''} · ${
+                  item.timeToRead
+                } min read`}
               />
             </section>
           ))}
@@ -98,3 +110,47 @@ export default () => {
     </Template>
   );
 };
+
+export const pageQuery = graphql`
+  query PopularArticles {
+    allMarkdownRemark(
+      limit: 7
+      filter: { frontmatter: { type: { eq: "article" } } }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          tags
+          path
+          description
+          date(formatString: "MMM DD, YYYY")
+          cover {
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                originalImg
+                originalName
+                presentationHeight
+                presentationWidth
+                sizes
+                src
+                srcSet
+                srcSetWebp
+                srcWebp
+                tracedSVG
+              }
+            }
+          }
+        }
+        excerpt(pruneLength: 280)
+        children {
+          id
+        }
+        timeToRead
+      }
+    }
+  }
+`;
+
+export default Home;

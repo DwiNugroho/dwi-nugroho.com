@@ -42,13 +42,13 @@ export const Navbar: React.FC<Props> = () => {
           >
             <p>Blog</p>
           </Link>
-          <Link
+          {/* <Link
             to="/projects"
             className="organism-navbar__item mx-3"
             activeClassName="organism-navbar__item--active"
           >
             <p>Projects</p>
-          </Link>
+          </Link> */}
           <Link
             to="/me"
             className="organism-navbar__item mx-3"

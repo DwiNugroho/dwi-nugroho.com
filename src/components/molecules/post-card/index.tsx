@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import GatsbyImage, { FluidObject } from 'gatsby-image';
 
 // Atoms
-import Img from '@atoms/img';
 import Tag from '@atoms/tag';
 
 import './style.scss';
@@ -19,7 +19,7 @@ export interface Props {
   /**
    *  A PostCard can have thumbnail atrribute
    */
-  thumbnail?: string;
+  thumbnail?: FluidObject;
   /**
    *  A PostCard can have tags atrribute
    */
@@ -32,6 +32,10 @@ export interface Props {
    *  A PostCard can have className atrribute
    */
   className?: string;
+  /**
+   *  A PostCard can have className atrribute
+   */
+  info?: string;
 }
 
 export const PostCard: React.FC<Props> = ({
@@ -41,8 +45,15 @@ export const PostCard: React.FC<Props> = ({
   tags,
   path,
   className,
+  info,
   ...props
 }) => {
+  const [isClient, setClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setClient(true);
+  }, []);
+
   return (
     <section
       className={`molecule-post-card width--100 ${className}`}
@@ -51,7 +62,7 @@ export const PostCard: React.FC<Props> = ({
       <Link to={path} className="width--100">
         <section className="molecule-post-card__thumbnail post-card-thumbnail width--100">
           <section className="post-card-thumbnail__img">
-            {thumbnail && <Img src={thumbnail} cover />}
+            {thumbnail && isClient && <GatsbyImage fluid={thumbnail} />}
           </section>
           {!thumbnail && (
             <section className="post-card-thumbnail__overlay flex flex--align-center flex--justify-center">
@@ -86,7 +97,7 @@ export const PostCard: React.FC<Props> = ({
           </section>
         )}
         <p className="text--gray" style={{ fontSize: '12px' }}>
-          May 13, 2021 · 8 min read
+          {info}
         </p>
       </section>
     </section>

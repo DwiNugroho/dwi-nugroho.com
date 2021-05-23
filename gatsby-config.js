@@ -98,6 +98,15 @@ module.exports = {
         showSpinner: false,
       },
     },
+
+    // markdown
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: path.resolve(__dirname, 'content'),
+      },
+    },
+    'gatsby-transformer-remark',
   ],
 };
 
