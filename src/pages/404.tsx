@@ -4,10 +4,13 @@ import Template from '@templates/main';
 
 export default () => {
   return (
-    <Template>
-      <section className="width--100 text--center">
-        <h1>Seite nicht gefunden</h1>
-        <p>Ups, wir konnten diese Seite nicht finden!</p>
+    <Template title="404 Page Not Found">
+      <br />
+      <br />
+      <br />
+      <section className="width--100 text--center mt-5 container">
+        <h1>404</h1>
+        <p>We can't seem to find the page you are looking for</p>
       </section>
     </Template>
   );

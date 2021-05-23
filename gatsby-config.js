@@ -87,5 +87,28 @@ module.exports = {
         icon: `src/assets/img/dwi-nugroho.png`, // This path is relative to the root of the site.
       },
     },
+
+    // Loading Progress
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#406b85`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
   ],
+};
+
+exports.shouldUpdateScroll = ({
+  routerProps: { location },
+  getSavedScrollPosition,
+}) => {
+  const currentPosition = getSavedScrollPosition(location);
+  // const queriedPosition = getSavedScrollPosition({ pathname: `/random` });
+
+  window.scrollTo(...(currentPosition || [0, 0]));
+
+  return false;
 };

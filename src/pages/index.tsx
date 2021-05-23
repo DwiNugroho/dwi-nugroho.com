@@ -1,19 +1,36 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import ReactToolTip from 'react-tooltip';
 
 import Template from '@templates/main';
 import Button from '@atoms/button';
 import PostCard from '@molecules/post-card';
 import Img from '@atoms/img';
 
+import Mail from '@/assets/icons/mail.svg';
+import LinkedIn from '@/assets/icons/linkedin.svg';
+
 import './style.scss';
 
 export default () => {
+  const [isClient, setClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setClient(true);
+  }, []);
   return (
     <Template title="Home">
       <section className="width--100 background--spring-wood">
         <section className="container">
-          <section className="flex flex--align-center py-5">
+          <section className="hero flex flex--row-reverse flex--align-center py-5">
+            <section className="hero__image background--white">
+              <Img
+                src="dwi-nugroho.jpeg"
+                cover
+                style={{ borderRadius: '4px' }}
+              />
+            </section>
+            <div className="mx-5 my-2"></div>
             <section className="width--100">
               <h1>Dwi Nugroho</h1>
               <p>
@@ -24,17 +41,30 @@ export default () => {
                 fun for me to learn something new and I do love to work in a
                 team.
               </p>
-            </section>
-            <div className="mx-5 my-5"></div>
-            <section className="flex flex--justify-end component--desktop-visible">
-              <section
-                style={{ width: '304px', height: '304px', maxWidth: '304px' }}
-              >
-                <Img
-                  src="dwi-nugroho.jpeg"
-                  cover
-                  style={{ borderRadius: '4px' }}
-                />
+              <section className="flex flex--align-center mt-4">
+                <Link to="/me">
+                  <Button size="large" color="blue">
+                    More About Me
+                  </Button>
+                </Link>
+                <a
+                  data-tip="adwinugroho1@gmail.com"
+                  href="mailto: adwinugroho1@gmail.com"
+                  target="_blank"
+                  className="text--lighter-black ml-4 mb-0"
+                  style={{ marginTop: '8px' }}
+                >
+                  <Mail />
+                </a>
+                <a
+                  data-tip="LinkedIn"
+                  href="https://www.linkedin.com/in/dwi-nugroho/"
+                  target="_blank"
+                  className="text--lighter-black ml-4 mb-0"
+                  style={{ marginTop: '8px' }}
+                >
+                  <LinkedIn />
+                </a>
               </section>
             </section>
           </section>
@@ -46,14 +76,14 @@ export default () => {
       <section className="container">
         <section className="flex flex--align-center flex--justify-space-between mb-3">
           <h2 className="mb-0">Popular Articles.</h2>
-          <Link to="">
+          <Link to="/">
             <Button color="yellow">View all</Button>
           </Link>
         </section>
         <hr />
 
         <section className="popular-articles flex flex--wrap width--100">
-          {[1, 1, 1, 1, 1, 1, 1].map((item, index) => (
+          {[1, 1, 1, 1, 1, 1].map((item, index) => (
             <section key={index} className="popular-articles__item">
               <PostCard
                 title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -64,6 +94,7 @@ export default () => {
           ))}
         </section>
       </section>
+      {isClient && <ReactToolTip effect="solid" place="bottom" />}
     </Template>
   );
 };
