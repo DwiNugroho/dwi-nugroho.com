@@ -10,8 +10,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Dwi Nugroho`,
-    description: `Digital Garden by Dwi Nugroho`,
-    author: `@dwinugroho`,
+    description: `I'm a Frontend Engineer and Expert Googler. I build things with code, make digital products to improve how humans living their life.`,
+    author: `@dwinugrohoo__`,
+    siteUrl: 'https://www.dwi-nugroho.com/',
+    siteLogo: 'https://www.dwi-nugroho.com/dwi-nugroho.png',
   },
   plugins: [
     {
@@ -84,7 +86,7 @@ module.exports = {
         // background_color: `#663399`,
         // theme_color: `#663399`,
         // display: `minimal-ui`,
-        icon: `src/assets/img/dwi-nugroho.png`, // This path is relative to the root of the site.
+        icon: `static/dwi-nugroho.png`, // This path is relative to the root of the site.
       },
     },
 
@@ -149,6 +151,64 @@ module.exports = {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         offset: -128,
+      },
+    },
+
+    'gatsby-plugin-offline',
+
+    // RSS
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((item) => {
+                return Object.assign({}, item.node.frontmatter, {
+                  description: item.frontmatter.description,
+                  date: item.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + item.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + item.frontmatter.path,
+                  custom_elements: [{ 'content:encoded': item.html }],
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: {order: DESC, fields: frontmatter___date}
+                  limit: 30
+                  filter: {frontmatter: {type: {eq: "article"}}}
+                ) {
+                  nodes {
+                    frontmatter {
+                      title
+                      date
+                      path
+                      description
+                    }
+                    excerpt
+                    html
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'Dwi Nugroho | RSS Feed',
+          },
+        ],
       },
     },
   ],

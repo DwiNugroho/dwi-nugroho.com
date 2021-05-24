@@ -19,7 +19,7 @@ const Home: React.FC<PageProps> = ({ data }) => {
     setClient(true);
   }, []);
   return (
-    <Template title="Home">
+    <Template>
       <section className="width--100 background--spring-wood">
         <section className="container">
           <section className="hero flex flex--row-reverse flex--align-center py-5">
