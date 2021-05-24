@@ -175,8 +175,9 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
+              console.log(allMarkdownRemark);
               return allMarkdownRemark.nodes.map((item) => {
-                return Object.assign({}, item.node.frontmatter, {
+                return Object.assign({}, item.frontmatter, {
                   description: item.frontmatter.description,
                   date: item.frontmatter.date,
                   url: site.siteMetadata.siteUrl + item.frontmatter.path,
