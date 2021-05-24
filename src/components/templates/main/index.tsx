@@ -12,7 +12,7 @@ export interface Props {
   /**
    *  A Layout must have title atrribute
    */
-  title: string;
+  title?: string;
   description?: string;
   children: React.ReactNode;
   className?: string;
@@ -27,7 +27,7 @@ export const Main: React.FC<Props> = ({
 }) => {
   return (
     <section className={`width--100 ${className}`} {...props}>
-      <Seo title={title} description={description} />
+      <Seo title={title || ''} description={description || ''} />
       <Navbar />
       <main style={{ minHeight: '74vh', marginTop: '84px' }}>{children}</main>
       <Footer />

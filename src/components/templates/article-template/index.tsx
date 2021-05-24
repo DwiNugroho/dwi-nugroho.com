@@ -25,6 +25,13 @@ export interface Props extends PageProps {
         description?: string;
         date?: string;
         tags?: string[];
+        cover?: {
+          childImageSharp: {
+            fixed: {
+              src: string;
+            };
+          };
+        };
       };
       html?: string;
       timeToRead?: string;
@@ -34,6 +41,7 @@ export interface Props extends PageProps {
 }
 
 export const ArticleTemplate: React.FC<Props> = ({ data }) => {
+  console.log(data);
   const [isClient, setClient] = React.useState(false);
 
   React.useEffect(() => {
@@ -46,6 +54,11 @@ export const ArticleTemplate: React.FC<Props> = ({ data }) => {
       <Seo
         title={markdownRemark.frontmatter.title}
         description={markdownRemark.frontmatter.description}
+        image={
+          markdownRemark.frontmatter.cover
+            ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
+            : ''
+        }
       />
       <Navbar />
 
@@ -54,7 +67,7 @@ export const ArticleTemplate: React.FC<Props> = ({ data }) => {
         style={{ minHeight: '74vh', marginTop: '84px' }}
       >
         <section className="width--100 background--spring-wood">
-          <section className="container py-5">
+          <main className="container py-5">
             <h1>{markdownRemark.frontmatter.title}</h1>
             <h4
               className="text--light-black mb-2"
@@ -73,7 +86,7 @@ export const ArticleTemplate: React.FC<Props> = ({ data }) => {
                 {` ${markdownRemark.timeToRead}`} min read
               </p>
             </section>
-          </section>
+          </main>
         </section>
         <br />
         <br />
@@ -157,6 +170,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        cover {
+          childImageSharp {
+            fixed {
+              src
+            }
+          }
+        }
       }
       html
     }

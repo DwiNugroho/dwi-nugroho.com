@@ -26,9 +26,10 @@ export interface Props {
    *  A Seo can have tags atrribute
    */
   meta?: object[];
+  image?: string;
 }
 
-const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
+const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -37,6 +38,8 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
             title
             description
             author
+            siteUrl
+            siteLogo
           }
         }
       }
@@ -46,13 +49,17 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
 
+  const seoImage = image
+    ? `${site.siteMetadata.siteUrl}${image}`
+    : site.siteMetadata.siteLogo;
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={title || defaultTitle}
+      titleTemplate={title ? `%s | ${defaultTitle}` : defaultTitle}
       meta={[
         {
           name: `description`,
@@ -60,11 +67,15 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: title || defaultTitle,
         },
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: 'og:image',
+          content: seoImage,
         },
         {
           property: `og:type`,
@@ -80,7 +91,7 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title || defaultTitle,
         },
         {
           name: `twitter:description`,
