@@ -11,7 +11,7 @@ const data = {
   headerGray: 0,
   bodyGray: 0,
   blockMarginBottom: 0.6,
-  headerLineHeight: 1.3,
+  headerLineHeight: 1.4,
   scaleRatio: 2.8,
   // See below for the full list of options.
 };

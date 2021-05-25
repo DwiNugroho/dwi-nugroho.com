@@ -15,7 +15,7 @@ export interface Props {
 export const MobileNav: React.FC<Props> = () => {
   return (
     <section className="organism-mobile-nav width--100">
-      <section className="flex container">
+      <nav className="flex container">
         <Link
           to="/"
           className="organism-mobile-nav__item flex flex--column flex--align-center p-1 pt-2"
@@ -48,7 +48,7 @@ export const MobileNav: React.FC<Props> = () => {
           <AboutMe />
           <p className="text--center mb-0 mt-1">About Me</p>
         </Link>
-      </section>
+      </nav>
     </section>
   );
 };

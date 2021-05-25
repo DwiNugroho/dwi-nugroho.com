@@ -34,12 +34,15 @@ const Home: React.FC<PageProps> = ({ data }) => {
             <section className="width--100">
               <h1>Dwi Nugroho</h1>
               <p>
-                I'm a web developer specializing in JavaScript language. I build
-                things with code, make digital products to improve how humans
-                living their life. I always interested in making a better user
-                experience for the products I build. Furthermore, it's really
-                fun for me to learn something new and I do love to work in a
-                team.
+                I'm a frontend engineer specializing in web development with
+                almost 2 years of experience. Have professional experience with
+                some popular frontend frameworks like{' '}
+                <a href="https://reactjs.org/">ReactJs</a>,{' '}
+                <a href="https://vuejs.org/">VueJs</a>,{' '}
+                <a href="https://www.gatsbyjs.com/">GatsbyJs</a> for web
+                development, and{' '}
+                <a href="https://reactnative.dev/">React Native</a> for mobile
+                applications development.
               </p>
               <section className="flex flex--align-center mt-4">
                 <Link to="/me">
@@ -48,8 +51,8 @@ const Home: React.FC<PageProps> = ({ data }) => {
                   </Button>
                 </Link>
                 <a
-                  data-tip="adwinugroho1@gmail.com"
-                  href="mailto: adwinugroho1@gmail.com"
+                  data-tip="hello@dwi-nugroho.com"
+                  href="mailto: hello@dwi-nugroho.com"
                   target="_blank"
                   className="text--lighter-black ml-4 mb-0"
                   style={{ marginTop: '8px' }}
