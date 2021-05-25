@@ -97,6 +97,10 @@ const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          property: 'twitter:image',
+          content: seoImage,
+        },
         ...meta,
       ]}
     />
