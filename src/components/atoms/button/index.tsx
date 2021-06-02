@@ -111,7 +111,7 @@ export const Button: React.FC<Props> = ({
       ) : (
         ''
       )}
-      <span className="atom-button__content">{children}</span>
+      {children}
     </button>
   );
 };

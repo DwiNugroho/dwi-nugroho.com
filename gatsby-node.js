@@ -1,4 +1,5 @@
 const path = require('path');
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -8,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
   );
   const articleTemplate = path.resolve(
     './src/components/templates/article-template/index.tsx'
+  );
+  const projectTemplate = path.resolve(
+    './src/components/templates/project-template/index.tsx'
   );
 
   return graphql(`
@@ -48,6 +52,29 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         });
       }
+
+      // project
+      if (item.frontmatter.type === 'project') {
+        createPage({
+          path: item.frontmatter.path,
+          component: projectTemplate,
+          context: {
+            slug: item.frontmatter.path,
+          },
+        });
+      }
     });
   });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+  }
 };

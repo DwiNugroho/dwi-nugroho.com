@@ -1,0 +1,69 @@
+.project-content {
+  @include breakpoint-down(lg) {
+    flex-direction: column-reverse !important;
+  }
+  &__left {
+    width: 100%;
+    @include breakpoint-up(lg) {
+      max-width: 304px;
+    }
+  }
+  &__info {
+    ul {
+      padding: 0;
+      margin-left: 0;
+      li {
+        list-style: none;
+        padding: 0;
+        a {
+          color: $lighter-black;
+          font-weight: 300;
+          border-bottom: 0.04px solid $lighter-black;
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+    @include breakpoint-up(lg) {
+      position: -webkit-sticky !important;
+      position: sticky !important;
+      top: 128px;
+    }
+  }
+}
+
+.stack {
+  &__image {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    border-radius: 4px;
+    // border: 1px solid $quill-gray;
+  }
+}
+
+.project-md {
+  &__thumbnail {
+    width: 100%;
+    padding-top: ((100% / 16) * 9);
+    background-color: $quill-gray;
+    position: relative;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .gatsby-image-wrapper {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+      }
+    }
+  }
+}
