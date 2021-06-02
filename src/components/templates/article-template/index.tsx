@@ -41,7 +41,6 @@ export interface Props extends PageProps {
 }
 
 export const ArticleTemplate: React.FC<Props> = ({ data }) => {
-  console.log(data);
   const [isClient, setClient] = React.useState(false);
 
   React.useEffect(() => {

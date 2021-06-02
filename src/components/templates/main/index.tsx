@@ -14,6 +14,7 @@ export interface Props {
    */
   title?: string;
   description?: string;
+  image?: string;
   children: React.ReactNode;
   className?: string;
 }
@@ -21,13 +22,18 @@ export interface Props {
 export const Main: React.FC<Props> = ({
   title,
   description,
+  image,
   children,
   className,
   ...props
 }) => {
   return (
     <section className={`width--100 ${className}`} {...props}>
-      <Seo title={title || ''} description={description || ''} />
+      <Seo
+        title={title || ''}
+        description={description || ''}
+        image={image || ''}
+      />
       <Navbar />
       <main style={{ minHeight: '74vh', marginTop: '84px' }}>{children}</main>
       <Footer />

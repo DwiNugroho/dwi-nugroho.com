@@ -55,7 +55,7 @@ export const Img: React.FC<Props> = ({
             extension
             publicURL
             childImageSharp {
-              fluid(maxWidth: 600) {
+              fluid(maxWidth: 1140, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

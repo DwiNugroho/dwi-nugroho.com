@@ -75,6 +75,7 @@ module.exports = {
         path: path.resolve(__dirname, 'src/assets/img'),
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -114,10 +115,10 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-images',
-            // options: {
-            //   maxWidth: 650,
-            //   wrapperStyle: (fluidResult) => `max-width: none;`,
-            // },
+            options: {
+              // maxWidth: 650,
+              // wrapperStyle: (fluidResult) => `max-width: none;`,
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',

@@ -1,41 +1,53 @@
 import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import { FluidObject } from 'gatsby-image';
 
 import Template from '@templates/main';
-import PostCard from '@molecules/post-card';
+import ProjectCard from '@molecules/project-card';
 
 import './style.scss';
 
-const Blog: React.FC<PageProps> = ({ data }) => {
+export interface Props extends PageProps {
+  data: {
+    allMarkdownRemark: {
+      nodes: {
+        frontmatter?: {
+          cover?: {
+            childImageSharp?: {
+              fluid?: FluidObject;
+            };
+          };
+          title: string;
+          description: string;
+          path: string;
+          stacks: string[];
+        };
+      }[];
+    };
+  };
+}
+
+const Projects: React.FC<Props> = ({ data }) => {
   return (
-    <Template title="Blog">
+    <Template title="Projects">
       <section className="width--100 background--spring-wood">
         <section className="container py-5">
-          <h1>Blog.</h1>
-          <h4 className="text--light-black">
+          <h1>Projects.</h1>
+          {/* <h4 className="text--light-black">
             Posts, tutorials, snippets, musings, notes, and everything else. The
             archive of everything I've written.
-          </h4>
+          </h4> */}
         </section>
       </section>
       <br />
       <section className="container">
-        <section className="articles flex flex--wrap width--100">
-          {(data as any).allMarkdownRemark.nodes.map((item, index) => (
-            <section key={`article-${index}`} className="articles__item">
-              <PostCard
+        <section className="width--100 mt-3">
+          {data.allMarkdownRemark.nodes.map((item, index) => (
+            <section key={`project-${index}`} className="width--100 mb-5">
+              <ProjectCard
                 title={item.frontmatter.title}
-                thumbnail={
-                  item.frontmatter.cover
-                    ? item.frontmatter.cover.childImageSharp.fluid
-                    : null
-                }
-                description={item.excerpt}
-                path={item.frontmatter.path}
-                tags={item.frontmatter.tags}
-                info={`${item.frontmatter.date || ''} · ${
-                  item.timeToRead
-                } min read`}
+                thumbnail={item.frontmatter.cover.childImageSharp.fluid}
+                {...item.frontmatter}
               />
             </section>
           ))}
@@ -46,21 +58,27 @@ const Blog: React.FC<PageProps> = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query AllArticles {
+  query AllProjects {
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "article" } } }
+      filter: {
+        frontmatter: {
+          type: { eq: "project" }
+          path: { ne: "/projects/personal-website" }
+        }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {
         frontmatter {
           title
-          tags
+          stacks
           path
           description
-          date(formatString: "MMM DD, YYYY")
+          live
+          source
           cover {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1140, quality: 100) {
                 aspectRatio
                 base64
                 originalImg
@@ -77,14 +95,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        excerpt(pruneLength: 280)
-        children {
-          id
-        }
-        timeToRead
       }
     }
   }
 `;
 
-export default Blog;
+export default Projects;

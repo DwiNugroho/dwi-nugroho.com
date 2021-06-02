@@ -1,6 +1,6 @@
 .hero {
   @include breakpoint-down(lg) {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   &__image {
@@ -16,7 +16,7 @@
 
 .popular-articles {
   margin: -16px 0 0 -32px;
-  width: calc(100% + 32px);
+  width: calc(100% + 32px) !important;
   &__item {
     margin: 32px 0 0 32px;
     flex: 1 1 calc(100% - 32px);
@@ -36,6 +36,26 @@
       &:nth-child(5),
       &:nth-child(6) {
         flex: 1 1 calc(100% / 2 - 32px);
+      }
+    }
+  }
+}
+
+.collaboration {
+  border-radius: 4px;
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+    h3 {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 410px) {
+    &__cta {
+      flex-direction: column;
+      a,
+      button {
+        width: 100%;
       }
     }
   }
