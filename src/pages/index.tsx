@@ -233,12 +233,7 @@ export const pageQuery = graphql`
     }
     popularProjects: allMarkdownRemark(
       limit: 3
-      filter: {
-        frontmatter: {
-          type: { eq: "project" }
-          path: { ne: "/projects/personal-website" }
-        }
-      }
+      filter: { frontmatter: { type: { eq: "project" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

@@ -2,11 +2,7 @@ import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import ReactToolTip from 'react-tooltip';
 
-import Seo from '@molecules/seo';
-
-import Navbar from '@organisms/navbar';
-import Footer from '@organisms/footer';
-import MobileNav from '@organisms/mobile-navigation';
+import Template from '@templates/main';
 
 import Tag from '@atoms/tag';
 
@@ -49,112 +45,93 @@ export const ArticleTemplate: React.FC<Props> = ({ data }) => {
 
   const { markdownRemark } = data;
   return (
-    <section className="width--100">
-      <Seo
-        title={markdownRemark.frontmatter.title}
-        description={markdownRemark.frontmatter.description}
-        image={
-          markdownRemark.frontmatter.cover
-            ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
-            : ''
-        }
-      />
-      <Navbar />
-
-      <section
-        className="width--100"
-        style={{ minHeight: '74vh', marginTop: '84px' }}
-      >
-        <section className="width--100 background--spring-wood">
-          <main className="container py-5">
-            <h1>{markdownRemark.frontmatter.title}</h1>
-            <h4
-              className="text--light-black mb-2"
-              style={{ lineHeight: '1.6' }}
+    <Template
+      title={markdownRemark.frontmatter.title}
+      description={markdownRemark.frontmatter.description}
+      image={
+        markdownRemark.frontmatter.cover
+          ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
+          : ''
+      }
+    >
+      <section className="width--100 background--spring-wood">
+        <main className="container py-5">
+          <h1>{markdownRemark.frontmatter.title}</h1>
+          <h4 className="text--light-black mb-2" style={{ lineHeight: '1.6' }}>
+            {markdownRemark.frontmatter.description}
+          </h4>
+          <section className="flex flex--align-center flex--wrap flex--justify-start width--100">
+            {(markdownRemark.frontmatter.tags || []).map((item, index) => (
+              <Tag key={index} className="mr-3 mt-3" appearance="outline">
+                {item}
+              </Tag>
+            ))}
+            <p className="mb-0 mt-3" style={{ fontSize: '14px' }}>
+              {markdownRemark.frontmatter.date || ''} ·
+              {` ${markdownRemark.timeToRead}`} min read
+            </p>
+          </section>
+        </main>
+      </section>
+      <br />
+      <br />
+      <section className="article-content container flex">
+        <section className="article-content__left">
+          <section className="article-content__info">
+            <p
+              className="mb-2 text--lighter-black"
+              style={{ fontSize: '14px' }}
             >
-              {markdownRemark.frontmatter.description}
-            </h4>
-            <section className="flex flex--align-center flex--wrap flex--justify-start width--100">
-              {markdownRemark.frontmatter.tags.map((item, index) => (
-                <Tag key={index} className="mr-3 mt-3" appearance="outline">
-                  {item}
-                </Tag>
-              ))}
-              <p className="mb-0 mt-3" style={{ fontSize: '14px' }}>
-                {markdownRemark.frontmatter.date || ''} ·
-                {` ${markdownRemark.timeToRead}`} min read
-              </p>
+              SHARE THIS ARTICLE
+            </p>
+            <section className="width--100 flex flex--wrap mb-1 mt-3">
+              <a
+                data-tip="Share to LinkedInd"
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}`}
+                target="_blank"
+                className="text--lighter-black mr-3 mb-3"
+              >
+                <LinkedInd />
+              </a>
+              <a
+                data-tip="Share to Twitter"
+                href={`http://twitter.com/share?text=${markdownRemark.frontmatter.title}&url=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}`}
+                target="_blank"
+                className="text--lighter-black mr-3 mb-3"
+              >
+                <Twitter />
+              </a>
+              <a
+                data-tip="Share to Facebook"
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}&${markdownRemark.frontmatter.title}`}
+                target="_blank"
+                className="text--lighter-black mr-3 mb-3"
+              >
+                <Facebook />
+              </a>
             </section>
-          </main>
-        </section>
-        <br />
-        <br />
-        <section className="article-content container flex">
-          <section className="article-content__left">
-            <section className="article-content__info">
+            <section className="width--100 component--desktop-visible">
               <p
                 className="mb-2 text--lighter-black"
                 style={{ fontSize: '14px' }}
               >
-                SHARE THIS ARTICLE
+                IN THIS ARTICLE
               </p>
-              <section className="width--100 flex flex--wrap mb-1 mt-3">
-                <a
-                  data-tip="Share to LinkedInd"
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}`}
-                  target="_blank"
-                  className="text--lighter-black mr-3 mb-3"
-                >
-                  <LinkedInd />
-                </a>
-                <a
-                  data-tip="Share to Twitter"
-                  href={`http://twitter.com/share?text=${markdownRemark.frontmatter.title}&url=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}`}
-                  target="_blank"
-                  className="text--lighter-black mr-3 mb-3"
-                >
-                  <Twitter />
-                </a>
-                <a
-                  data-tip="Share to Facebook"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://www.dwi-nugroho.com${markdownRemark.frontmatter.path}&${markdownRemark.frontmatter.title}`}
-                  target="_blank"
-                  className="text--lighter-black mr-3 mb-3"
-                >
-                  <Facebook />
-                </a>
-              </section>
-              <section className="width--100 component--desktop-visible">
-                <p
-                  className="mb-2 text--lighter-black"
-                  style={{ fontSize: '14px' }}
-                >
-                  IN THIS ARTICLE
-                </p>
-                <section
-                  dangerouslySetInnerHTML={{
-                    __html: markdownRemark.tableOfContents,
-                  }}
-                />
-              </section>
+              <section
+                dangerouslySetInnerHTML={{
+                  __html: markdownRemark.tableOfContents,
+                }}
+              />
             </section>
           </section>
-          <div className="mx-4 my-3"></div>
-          <section className="width--100">
-            <section
-              dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
-            />
-          </section>
+        </section>
+        <div className="mx-4 my-3"></div>
+        <section className="width--100">
+          <section dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
         </section>
       </section>
-      <Footer />
-      <br />
-      <br />
-      <section className="width--100 component--mobile-visible">
-        <MobileNav />
-      </section>
       {isClient && <ReactToolTip effect="solid" place="bottom" />}
-    </section>
+    </Template>
   );
 };
 
