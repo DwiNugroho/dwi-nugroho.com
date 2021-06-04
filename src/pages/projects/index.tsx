@@ -29,14 +29,13 @@ export interface Props extends PageProps {
 
 const Projects: React.FC<Props> = ({ data }) => {
   return (
-    <Template title="Projects">
+    <Template title="Projects" description="A showcase of my recent projects.">
       <section className="width--100 background--spring-wood">
         <section className="container py-5">
           <h1>Projects.</h1>
-          {/* <h4 className="text--light-black">
-            Posts, tutorials, snippets, musings, notes, and everything else. The
-            archive of everything I've written.
-          </h4> */}
+          <h4 className="text--light-black">
+            A showcase of my recent projects.
+          </h4>
         </section>
       </section>
       <br />
@@ -60,12 +59,7 @@ const Projects: React.FC<Props> = ({ data }) => {
 export const pageQuery = graphql`
   query AllProjects {
     allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          type: { eq: "project" }
-          path: { ne: "/projects/personal-website" }
-        }
-      }
+      filter: { frontmatter: { type: { eq: "project" } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

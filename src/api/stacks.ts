@@ -28,7 +28,11 @@ export default {
     logo: 'stacks/redux.png',
   },
   firebase: {
-    link: 'https://firebase.google.com/?hl=id',
+    link: 'https://firebase.google.com/',
     logo: 'stacks/firebase.png',
+  },
+  gatsbyjs: {
+    link: 'https://www.gatsbyjs.com/',
+    logo: 'stacks/gatsbyjs.png',
   },
 };
