@@ -38,6 +38,7 @@ export interface Props extends PageProps {
           };
         };
       };
+      excerpt?: string;
       html?: string;
     };
   };
@@ -54,7 +55,7 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
   return (
     <Template
       title={markdownRemark.frontmatter.title}
-      description={markdownRemark.frontmatter.description}
+      description={markdownRemark.excerpt}
       image={
         markdownRemark.frontmatter.cover
           ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
@@ -299,6 +300,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      excerpt(pruneLength: 320)
       html
     }
   }

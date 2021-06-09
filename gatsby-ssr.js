@@ -6,17 +6,22 @@
 //   pluginOptions
 // ) => {
 //   const helmet = Helmet.renderStatic();
-//   console.log(helmet);
 //   setHtmlAttributes(helmet.htmlAttributes.toComponent());
 //   setBodyAttributes(helmet.bodyAttributes.toComponent());
-//   setHeadComponents([
+//   const head = [
 //     helmet.title.toComponent(),
 //     helmet.meta.toComponent(),
 //     helmet.link.toComponent(),
 //     helmet.noscript.toComponent(),
 //     helmet.script.toComponent(),
 //     helmet.style.toComponent(),
-//   ]);
+//   ];
+//   setHeadComponents(head);
+
+//   console.log('helmet');
+//   console.log(helmet.meta.toComponent());
+//   console.log('head');
+//   console.log(head);
 // };
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
