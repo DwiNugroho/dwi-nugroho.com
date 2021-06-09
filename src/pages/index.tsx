@@ -12,8 +12,6 @@ import Img from '@atoms/img';
 import Mail from '@/assets/icons/mail.svg';
 import LinkedIn from '@/assets/icons/linkedin.svg';
 
-import './style.scss';
-
 interface markdownProps {
   nodes: {
     excerpt: string;

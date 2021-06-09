@@ -103,6 +103,7 @@ const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
         },
         ...meta,
       ]}
+      defer={false}
     />
   );
 };

@@ -5,8 +5,6 @@ import { FluidObject } from 'gatsby-image';
 import Template from '@templates/main';
 import ProjectCard from '@molecules/project-card';
 
-import './style.scss';
-
 export interface Props extends PageProps {
   data: {
     allMarkdownRemark: {

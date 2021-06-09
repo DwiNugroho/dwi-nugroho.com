@@ -1,8 +1,64 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
+// @font-face {
+//   font-family: 'InterFontFace';
+//   src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+// }
+
+* {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+::selection {
+  color: $black;
+  background: $light-yellow;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   line-height: 1.4;
+//   display: block;
+//   font-weight: bold;
+//   margin-left: 0;
+//   margin-right: 0;
+//   margin-top: 0;
+// }
+
+// h1 {
+//   font-size: 2em;
+// }
+
+// h2 {
+//   font-size: 1.5em;
+// }
+
+// h3 {
+//   font-size: 1.17em;
+// }
+
+// h5 {
+//   font-size: 0.83em;
+// }
+
+// h6 {
+//   font-size: 0.67em;
+// }
+
+// p {
+//   margin-top: 0;
+//   font-size: 16px;
+// }
 
 html,
 body {
@@ -10,7 +66,6 @@ body {
   padding: 0;
   margin: 0;
   background-color: $white;
-  font-family: 'Inter' sans-serif !important;
   scroll-behavior: smooth;
 }
 
@@ -116,13 +171,18 @@ button {
   }
 }
 
-hr {
-  background-color: $quill-gray !important;
-}
+// hr {
+//   background-color: $quill-gray;
+//   border-color: $quill-gray !important;
+// }
 
-::selection {
-  color: $black;
-  background: $light-yellow;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $quill-gray;
+  margin: 1em 0;
+  padding: 0;
 }
 
 blockquote {
@@ -139,87 +199,3 @@ blockquote {
     }
   }
 }
-
-// hr {
-//   border: none;
-//   border-top: 1px solid darken($color: $white, $amount: 4%);
-//   &.pale-smoke {
-//     border-top: 1px solid $pale-smoke !important;
-//   }
-//   &.smoke-gray {
-//     border-top: 1px solid #dee1e5;
-//   }
-// }
-
-// mark {
-//   background: linear-gradient(rgba(255, 255, 255, 0) 55%, $light-orange 50%);
-// }
-
-// .border {
-//   border: 1px solid $pale-smoke;
-//   border-radius: 4px;
-// }
-
-// .place-items-center {
-//   display: grid;
-//   place-items: center !important;
-// }
-
-// .cursor {
-//   &--pointer {
-//     cursor: pointer;
-//   }
-// }
-
-// .position {
-//   &--sticky {
-//     @include breakpoint-up(lg) {
-//       position: -webkit-sticky;
-//       position: sticky;
-//       top: 96px;
-//     }
-//   }
-//   &--relative {
-//     position: relative;
-//   }
-//   &--fixed {
-//     position: fixed;
-//   }
-// }
-
-// .animation {
-//   animation-duration: 1s !important;
-//   transition-duration: 1s !important;
-//   animation-fill-mode: both;
-//   &__tada {
-//     animation-name: tada;
-//   }
-// }
-
-// @keyframes tada {
-//   from {
-//     transform: scale3d(1, 1, 1);
-//   }
-
-//   10%,
-//   20% {
-//     transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-//   }
-
-//   30%,
-//   50%,
-//   70%,
-//   90% {
-//     transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-//   }
-
-//   40%,
-//   60%,
-//   80% {
-//     transform: scale3d(1.2, 1.2, 1.2) rotate3d(0, 0, 1, -3deg);
-//   }
-
-//   to {
-//     transform: scale3d(1, 1, 1);
-//   }
-// }
