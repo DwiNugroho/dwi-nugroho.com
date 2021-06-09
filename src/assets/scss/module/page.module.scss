@@ -60,3 +60,19 @@
     }
   }
 }
+
+.articles {
+  margin: -16px 0 0 -32px;
+  width: calc(100% + 32px) !important;
+  &__item {
+    margin: 32px 0 0 32px;
+    flex: 0 1 calc(100% - 32px);
+
+    @include breakpoint-up(md) {
+      flex: 0 1 calc(100% / 2 - 32px);
+    }
+    // @include breakpoint-up(lg) {
+    //   flex: 0 1 calc(100% / 3 - 32px);
+    // }
+  }
+}

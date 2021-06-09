@@ -16,6 +16,7 @@ module.exports = {
     siteLogo: 'https://www.dwi-nugroho.com/dwi-nugroho.png',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

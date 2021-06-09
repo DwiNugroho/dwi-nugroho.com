@@ -4,8 +4,6 @@ import { graphql, PageProps } from 'gatsby';
 import Template from '@templates/main';
 import PostCard from '@molecules/post-card';
 
-import './style.scss';
-
 const Blog: React.FC<PageProps> = ({ data }) => {
   return (
     <Template title="Blog">
