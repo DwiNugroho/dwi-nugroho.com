@@ -2,8 +2,6 @@ import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import GatsbyImage from 'gatsby-image';
 
-import './style.scss';
-
 export interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   /**
    * An img can have src attribute

@@ -6,8 +6,6 @@ import Navbar from '@organisms/navbar';
 import Footer from '@organisms/footer';
 import MobileNav from '@organisms/mobile-navigation';
 
-import './style.scss';
-
 export interface Props {
   /**
    *  A Layout must have title atrribute

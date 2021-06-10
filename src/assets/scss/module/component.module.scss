@@ -1,0 +1,415 @@
+.organism-footer {
+  &__item {
+    font-weight: 500;
+    color: $light-black;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+
+.organism-mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $spring-wood;
+  border-top: 1px solid $quill-gray;
+  z-index: 999;
+  &__item {
+    width: 100%;
+    font-size: 12px;
+    color: $lighter-black;
+    &:hover {
+      color: $yellow;
+    }
+    &--active {
+      color: $dark-yellow;
+      font-weight: 600;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.organism-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  border-bottom: 1px solid $quill-gray;
+  &__item {
+    font-weight: 500;
+    color: $light-black;
+    &:hover {
+      color: $yellow;
+    }
+    &--active {
+      color: $dark-yellow !important;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.molecule-post-card {
+  width: 100%;
+  &__thumbnail {
+    // padding-top: 56%;
+    background-color: $quill-gray;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid $quill-gray;
+    height: 224px;
+    .gatsby-image-wrapper {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+      }
+    }
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: $black;
+    &:hover {
+      color: $dark-yellow;
+    }
+  }
+
+  &__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 400;
+  }
+}
+
+.post-card-thumbnail {
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // padding: 16px 16px 0 16px;
+    img {
+      border-radius: 4px 4px 0 0;
+      // box-shadow: 0 0 12px -4px rgba($color: #000000, $alpha: 0.4);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.08);
+    }
+  }
+}
+
+.molecule-project-card {
+  width: 100%;
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+  }
+  &__thumbnail {
+    padding-top: calc(((100% / 16) * 9)) !important;
+    background-color: $quill-gray;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid $quill-gray;
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: $black;
+    &:hover {
+      color: $dark-yellow;
+    }
+  }
+}
+
+.project-card-thumbnail {
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // padding: 16px 16px 0 16px;
+    .gatsby-image-wrapper {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.08);
+    }
+  }
+}
+
+@mixin button-mixin($text, $border, $bg) {
+  color: $text;
+  border: 1px solid $border;
+  background-color: $bg;
+  &:hover {
+    border: 1px solid darken($color: $border, $amount: 4%);
+    background-color: darken($color: $bg, $amount: 4%);
+  }
+  &:disabled,
+  &[disabled] {
+    color: lighten($color: $text, $amount: 16%);
+    border: 1px solid lighten($color: $border, $amount: 16%);
+    background-color: lighten($color: $bg, $amount: 16%);
+  }
+}
+
+.atom-button {
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  font-weight: 600 !important;
+  transition: 0.4s ease-in-out;
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &--small {
+    padding: 2px 8px;
+  }
+  &--medium {
+    padding: 4px 12px;
+  }
+  &--large {
+    padding: 8px 16px;
+  }
+
+  &--primary {
+    color: $light-black;
+    border: 1px solid $quill-gray;
+    background-color: $quill-gray;
+    &:disabled,
+    &[disabled] {
+      color: lighten($color: $light-black, $amount: 16%);
+      border: 1px solid lighten($color: $quill-gray, $amount: 4%);
+    }
+    &:hover {
+      border: 1px solid darken($color: $quill-gray, $amount: 4%);
+      background-color: darken($color: $quill-gray, $amount: 4%);
+    }
+    &.atom-button--blue {
+      @include button-mixin($white, $dark-blue, $blue);
+    }
+    &.atom-button--red {
+      @include button-mixin($white, $dark-red, $red);
+    }
+    &.atom-button--yellow {
+      @include button-mixin($white, $dark-yellow, $yellow);
+    }
+  }
+
+  &--outline {
+    color: $light-black;
+    border: 1px solid $quill-gray;
+    background-color: transparent;
+    &:disabled,
+    &[disabled] {
+      color: lighten($color: $light-black, $amount: 16%);
+      border: 1px solid lighten($color: $quill-gray, $amount: 4%);
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      border: 1px solid darken($color: $quill-gray, $amount: 4%);
+      background-color: rgba($color: #000000, $alpha: 0.04);
+    }
+
+    &.atom-button--blue {
+      @include button-mixin($blue, $blue, $lighter-blue);
+    }
+    &.atom-button--red {
+      @include button-mixin($red, $red, $lighter-red);
+    }
+    &.atom-button--yellow {
+      @include button-mixin($yellow, $yellow, $lighter-yellow);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__ripple {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: rgba($color: #000000, $alpha: 0.2);
+    display: block;
+    content: '';
+    border-radius: 9999px;
+    opacity: 1;
+    animation: 1.6s ease 1 forwards ripple-effect;
+  }
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(10);
+    opacity: 0.375;
+  }
+  100% {
+    transform: scale(35);
+    opacity: 0;
+  }
+}
+
+.atom-img {
+  &--cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &--contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.atom-input {
+  font-size: 16px;
+  padding: 4px 12px;
+  border: 1px solid $quill-gray;
+  background-color: #ffffff;
+  outline-color: $blue !important;
+  border-radius: 4px;
+  color: $black;
+
+  &:disabled,
+  &[disabled] {
+    background-color: lighten($color: $quill-gray, $amount: 8%);
+  }
+
+  &--error {
+    border: 1px solid $red;
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-weight: 400;
+    color: rgba($color: $lighter-black, $alpha: 0.4);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@mixin primary-mixin($bg) {
+  background-color: $bg;
+  border: 1px solid $bg;
+}
+
+@mixin outline-mixin($border, $text) {
+  border: 1px solid $border;
+  color: $text;
+}
+
+.atom-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: $light-black;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  &--primary {
+    @include primary-mixin($quill-gray);
+    &.atom-tag--red {
+      @include primary-mixin($light-red);
+    }
+    &.atom-tag--blue {
+      @include primary-mixin($light-blue);
+    }
+    &.atom-tag--yellow {
+      @include primary-mixin($light-yellow);
+    }
+  }
+  &--outline {
+    background-color: transparent;
+    @include outline-mixin($quill-gray, $lighter-black);
+    &.atom-tag--red {
+      @include outline-mixin($light-red, $red);
+    }
+    &.atom-tag--blue {
+      @include outline-mixin($light-blue, $blue);
+    }
+    &.atom-tag--yellow {
+      @include outline-mixin($light-yellow, $yellow);
+    }
+  }
+}

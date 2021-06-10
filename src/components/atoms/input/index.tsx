@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import './style.scss';
-
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
    *  Spans the full width of the Input parent

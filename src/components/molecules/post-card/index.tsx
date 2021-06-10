@@ -5,8 +5,6 @@ import GatsbyImage, { FluidObject } from 'gatsby-image';
 // Atoms
 import Tag from '@atoms/tag';
 
-import './style.scss';
-
 export interface Props {
   /**
    *  A PostCard must have title atrribute

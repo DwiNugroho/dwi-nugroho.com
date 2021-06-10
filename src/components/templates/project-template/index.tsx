@@ -18,8 +18,6 @@ import Stacks from '@/api/stacks';
 import Code from '@/assets/icons/code.svg';
 import LinkIcon from '@/assets/icons/link-2.svg';
 
-import './style.scss';
-
 export interface Props extends PageProps {
   data: {
     markdownRemark: {
@@ -76,7 +74,7 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
           ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
           : ''
       }
-      type="article"
+      type="website"
     >
       <br />
       <section className="container">

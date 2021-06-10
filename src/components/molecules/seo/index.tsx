@@ -61,7 +61,7 @@ const Seo: React.FC<Props> = ({
     ? `${site.siteMetadata.siteUrl}${image}`
     : site.siteMetadata.siteLogo;
 
-  const ogType = type || 'website';
+  const ogType = type || 'article';
   const ogCard = type && type === 'article' ? 'summary_large_image' : 'summary';
 
   return (
