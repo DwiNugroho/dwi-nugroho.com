@@ -76,7 +76,7 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
           ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
           : ''
       }
-      type="article"
+      type="website"
     >
       <br />
       <section className="container">
