@@ -17,6 +17,7 @@ export interface Props {
   image?: string;
   children: React.ReactNode;
   className?: string;
+  type?: 'website' | 'article';
 }
 
 export const Main: React.FC<Props> = ({
@@ -25,6 +26,7 @@ export const Main: React.FC<Props> = ({
   image,
   children,
   className,
+  type,
   ...props
 }) => {
   return (
@@ -33,6 +35,7 @@ export const Main: React.FC<Props> = ({
         title={title || ''}
         description={description || ''}
         image={image || ''}
+        type={type}
       />
       <Navbar />
       <main style={{ minHeight: '74vh', marginTop: '84px' }}>{children}</main>

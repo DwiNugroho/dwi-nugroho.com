@@ -213,5 +213,11 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `dwi-nugroho`,
+      },
+    },
   ],
 };
