@@ -5,8 +5,6 @@ import ReactToolTip from 'react-tooltip';
 import Github from '@/assets/icons/github.svg';
 import LinkedIn from '@/assets/icons/linkedin.svg';
 
-import './style.scss';
-
 export interface Props {
   //
 }

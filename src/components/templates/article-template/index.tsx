@@ -11,8 +11,6 @@ import LinkedInd from '@/assets/icons/linkedin.svg';
 import Twitter from '@/assets/icons/twitter.svg';
 import Facebook from '@/assets/icons/facebook.svg';
 
-import './style.scss';
-
 export interface Props extends PageProps {
   data: {
     markdownRemark: {

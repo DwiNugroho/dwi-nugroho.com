@@ -7,8 +7,6 @@ import Button from '@atoms/button';
 import Code from '@/assets/icons/code.svg';
 import LinkIcon from '@/assets/icons/link-2.svg';
 
-import './style.scss';
-
 export interface Props {
   /**
    *  A ProjectCard must have title atrribute

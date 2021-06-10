@@ -6,8 +6,6 @@ import Blog from '@/assets/icons/file-text.svg';
 import Projects from '@/assets/icons/briefcase.svg';
 import AboutMe from '@/assets/icons/user.svg';
 
-import './style.scss';
-
 export interface Props {
   //
 }

@@ -3,8 +3,6 @@ import { graphql, PageProps } from 'gatsby';
 
 import Template from '@templates/main';
 
-import './style.scss';
-
 export interface Props extends PageProps {
   data: {
     markdownRemark: {

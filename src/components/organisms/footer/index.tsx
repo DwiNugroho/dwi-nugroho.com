@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import './style.scss';
-
 export interface Props {
   //
 }
