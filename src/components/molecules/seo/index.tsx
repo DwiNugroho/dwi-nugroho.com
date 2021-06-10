@@ -27,9 +27,17 @@ export interface Props {
    */
   meta?: object[];
   image?: string;
+  type?: 'website' | 'article';
 }
 
-const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
+const Seo: React.FC<Props> = ({
+  description,
+  lang,
+  image,
+  meta,
+  title,
+  type,
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -52,6 +60,9 @@ const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
   const seoImage = image
     ? `${site.siteMetadata.siteUrl}${image}`
     : site.siteMetadata.siteLogo;
+
+  const ogType = type || 'website';
+  const ogCard = type && type === 'article' ? 'summary_large_image' : 'summary';
 
   return (
     <Helmet
@@ -79,11 +90,11 @@ const Seo: React.FC<Props> = ({ description, lang, image, meta, title }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: ogType,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: ogCard,
         },
         {
           name: `twitter:creator`,

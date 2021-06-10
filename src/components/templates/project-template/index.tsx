@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import { Disqus } from 'gatsby-plugin-disqus';
 import ReactToolTip from 'react-tooltip';
 import GatsbyImage, { FluidObject } from 'gatsby-image';
 
@@ -41,6 +42,11 @@ export interface Props extends PageProps {
       excerpt?: string;
       html?: string;
     };
+    site?: {
+      siteMetadata?: {
+        siteUrl?: string;
+      };
+    };
   };
 }
 
@@ -51,7 +57,16 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
     setClient(true);
   }, []);
 
-  const { markdownRemark } = data;
+  const { markdownRemark, site } = data;
+
+  const disqusConfig = {
+    /* Replace PAGE_URL with your post's canonical URL variable */
+    url: `${site.siteMetadata.siteUrl}${markdownRemark.frontmatter.path}`,
+    /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    identifier: markdownRemark.frontmatter.path,
+    /* Replace PAGE_TITLE with the title of the page */
+    title: markdownRemark.frontmatter.title,
+  };
   return (
     <Template
       title={markdownRemark.frontmatter.title}
@@ -61,6 +76,7 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
           ? markdownRemark.frontmatter.cover.childImageSharp.fixed.src
           : ''
       }
+      type="article"
     >
       <br />
       <section className="container">
@@ -263,6 +279,11 @@ export const ProjectTemplate: React.FC<Props> = ({ data }) => {
           <section dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
         </section>
       </section>
+      <br />
+      <br />
+      <section className="width--100 container mt-5">
+        <Disqus config={disqusConfig} />
+      </section>
       {isClient && <ReactToolTip effect="solid" place="bottom" />}
     </Template>
   );
@@ -302,6 +323,15 @@ export const pageQuery = graphql`
       }
       excerpt(pruneLength: 320)
       html
+    }
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        siteUrl
+        siteLogo
+      }
     }
   }
 `;
