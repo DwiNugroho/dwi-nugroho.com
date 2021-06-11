@@ -105,7 +105,43 @@ const Home: React.FC<Props> = ({ data }) => {
       <br />
       <br />
       <br />
+      <br />
       <section className="container">
+        <section className="flex flex--align-center flex--justify-space-between mb-3">
+          <h2 className="mb-0">Articles.</h2>
+          <Link to="/blog">
+            <Button color="yellow">View all</Button>
+          </Link>
+        </section>
+        <hr />
+
+        <section className="popular-articles flex flex--wrap width--100">
+          {data.popularArticles.nodes.map((item, index) => (
+            <section
+              key={`popular-article-${index}`}
+              className="popular-articles__item"
+            >
+              <PostCard
+                title={item.frontmatter.title}
+                thumbnail={
+                  item.frontmatter.cover
+                    ? item.frontmatter.cover.childImageSharp.fluid
+                    : null
+                }
+                description={item.excerpt}
+                path={item.frontmatter.path}
+                tags={item.frontmatter.tags}
+                info={`${item.frontmatter.date || ''} · ${
+                  item.timeToRead
+                } min read`}
+              />
+            </section>
+          ))}
+        </section>
+        <br />
+        <br />
+        <br />
+        <br />
         <section className="flex flex--align-center flex--justify-space-between mb-3">
           <h2 className="mb-0">Projects.</h2>
           <Link to="/projects">
@@ -154,38 +190,6 @@ const Home: React.FC<Props> = ({ data }) => {
         </section>
         <br />
         <br />
-        <br />
-        <section className="flex flex--align-center flex--justify-space-between mb-3">
-          <h2 className="mb-0">Articles.</h2>
-          <Link to="/blog">
-            <Button color="yellow">View all</Button>
-          </Link>
-        </section>
-        <hr />
-
-        <section className="popular-articles flex flex--wrap width--100">
-          {data.popularArticles.nodes.map((item, index) => (
-            <section
-              key={`popular-article-${index}`}
-              className="popular-articles__item"
-            >
-              <PostCard
-                title={item.frontmatter.title}
-                thumbnail={
-                  item.frontmatter.cover
-                    ? item.frontmatter.cover.childImageSharp.fluid
-                    : null
-                }
-                description={item.excerpt}
-                path={item.frontmatter.path}
-                tags={item.frontmatter.tags}
-                info={`${item.frontmatter.date || ''} · ${
-                  item.timeToRead
-                } min read`}
-              />
-            </section>
-          ))}
-        </section>
       </section>
       {isClient && <ReactToolTip effect="solid" place="bottom" />}
     </Template>
