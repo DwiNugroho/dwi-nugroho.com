@@ -35,4 +35,8 @@ export default {
     link: 'https://www.gatsbyjs.com/',
     logo: 'stacks/gatsbyjs.png',
   },
+  reactjs: {
+    link: 'https://reactjs.org/',
+    logo: 'stacks/reactjs.png',
+  },
 };
